@@ -3,7 +3,22 @@
     <div class="intro-wrap d-flex-center">
       <div class="intro-ctx-wrap container margin-sides">
         <div class="intro-ctx-box">
-
+          <div class="intro-content">
+            <h1>MAKE YOUR COLLECTION,</h1>
+            <h1>MEET OUR COLLECTIVE,</h1>
+            <h1>MARK THE <span>WORLD</span>.</h1>
+            <div class="intro-line"></div>
+          </div>
+          <div class="intro-content">
+            <h3>
+              你一直在寻找的艺术留学名师聚集地。<br>
+              我们成功将学生输送到
+              <span>美国帕森斯设计学院...</span>
+            </h3>
+            <div class="intro-img-box">
+              <img class="intro-img" src="./assets/homepage/topcover/Young_Talent_logo_white.png" alt="">
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -199,14 +214,14 @@
                   v-if="mobileScreen === false"
                   @click="getEnlargeImg"
                   src="./assets/homepage/studentcase/underg/porfolio_small1.jpg"
-                  data-enlarge="studentCaseOne"
+                  data-enlarge="0"
                   data-current="portfolio"
                   alt="">
                 <img
                   v-if="mobileScreen === true"
                   @click="getEnlargeImg"
                   src="./assets/homepage/studentcase/underg/porfolio_small1_mobile.jpg"
-                  data-enlarge="studentCaseOne"
+                  data-enlarge="0"
                   data-current="portfolio"
                   alt="">
               </div>
@@ -214,7 +229,7 @@
                 <img
                   @click="getEnlargeImg"
                   src="./assets/homepage/studentcase/underg/undergraduate_offer1.1.jpg"
-                  data-enlarge="studentCaseOne"
+                  data-enlarge="0"
                   data-current="offer"
                   alt="">
               </div>
@@ -245,14 +260,14 @@
                   v-if="mobileScreen === false"
                   @click="getEnlargeImg"
                   src="./assets/homepage/studentcase/underg/portfolio_small2.jpg"
-                  data-enlarge="studentCaseTwo"
+                  data-enlarge="1"
                   data-current="portfolio"
                   alt="">
                 <img
                   v-if="mobileScreen === true"
                   @click="getEnlargeImg"
                   src="./assets/homepage/studentcase/underg/portfolio_small2_mobile.jpg"
-                  data-enlarge="studentCaseTwo"
+                  data-enlarge="1"
                   data-current="portfolio"
                   alt="">
               </div>
@@ -260,7 +275,7 @@
                 <img
                   @click="getEnlargeImg"
                   src="./assets/homepage/studentcase/underg/undergraduate_offer2.1.jpg"
-                  data-enlarge="studentCaseTwo"
+                  data-enlarge="1"
                   data-current="offer"
                   alt="">
               </div>
@@ -290,14 +305,14 @@
                   v-if="mobileScreen === false"
                   @click="getEnlargeImg"
                   src="./assets/homepage/studentcase/underg/portfolio_small3.jpg"
-                  data-enlarge="studentCaseThree"
+                  data-enlarge="2"
                   data-current="portfolio"
                   alt="">
                 <img
                   v-if="mobileScreen === true"
                   @click="getEnlargeImg"
                   src="./assets/homepage/studentcase/underg/portfolio_small3_mobile.jpg"
-                  data-enlarge="studentCaseThree"
+                  data-enlarge="2"
                   data-current="portfolio"
                   alt="">
               </div>
@@ -305,7 +320,7 @@
                 <img
                   @click="getEnlargeImg"
                   src="./assets/homepage/studentcase/underg/undergraduate_offer3.1.jpg"
-                  data-enlarge="studentCaseThree"
+                  data-enlarge="2"
                   data-current="offer"
                   alt="">
               </div>
@@ -341,14 +356,14 @@
                   v-if="mobileScreen === false"
                   @click="getEnlargeImg"
                   src="./assets/homepage/studentcase/postg/portfolio_small4.jpg"
-                  data-enlarge="studentCaseFour"
+                  data-enlarge="3"
                   data-current="portfolio"
                   alt="">
                 <img
                   v-if="mobileScreen === true"
                   @click="getEnlargeImg"
                   src="./assets/homepage/studentcase/postg/portfolio_small4_mobile.jpg"
-                  data-enlarge="studentCaseFour"
+                  data-enlarge="3"
                   data-current="portfolio"
                   alt="">
               </div>
@@ -356,7 +371,7 @@
                 <img
                   @click="getEnlargeImg"
                   src="./assets/homepage/studentcase/postg/postgraduate_offer1.1.jpg"
-                  data-enlarge="studentCaseFour"
+                  data-enlarge="3"
                   data-current="offer"
                   alt="">
               </div>
@@ -384,14 +399,14 @@
                   v-if="mobileScreen === false"
                   @click="getEnlargeImg"
                   src="./assets/homepage/studentcase/postg/portfolio_small5.jpg"
-                  data-enlarge="studentCaseFive"
+                  data-enlarge="4"
                   data-current="portfolio"
                   alt="">
                 <img
                   v-if="mobileScreen === true"
                   @click="getEnlargeImg"
                   src="./assets/homepage/studentcase/postg/portfolio_small5_mobile.jpg"
-                  data-enlarge="studentCaseFive"
+                  data-enlarge="4"
                   data-current="portfolio"
                   alt="">
               </div>
@@ -399,7 +414,7 @@
                 <img
                   @click="getEnlargeImg"
                   src="./assets/homepage/studentcase/postg/postgraduate_offer2.1.jpg"
-                  data-enlarge="studentCaseFive"
+                  data-enlarge="4"
                   data-current="offer"
                   alt="">
               </div>
@@ -428,14 +443,14 @@
                   v-if="mobileScreen === false"
                   @click="getEnlargeImg"
                   src="./assets/homepage/studentcase/postg/portfolio_small6.jpg"
-                  data-enlarge="studentCaseSix"
+                  data-enlarge="5"
                   data-current="portfolio"
                   alt="">
                 <img
                   v-if="mobileScreen === true"
                   @click="getEnlargeImg"
                   src="./assets/homepage/studentcase/postg/portfolio_small6_mobile.jpg"
-                  data-enlarge="studentCaseSix"
+                  data-enlarge="5"
                   data-current="portfolio"
                   alt="">
               </div>
@@ -443,7 +458,7 @@
                 <img
                   @click="getEnlargeImg"
                   src="./assets/homepage/studentcase/postg/postgraduate_offer3.1.jpg"
-                  data-enlarge="studentCaseSix"
+                  data-enlarge="5"
                   data-current="offer"
                   alt="">
               </div>
@@ -459,10 +474,18 @@
     </div>
 
     <!-- Modal BOX -->
-    <div id="modal-box" class="modal" :class="{'display-f': modalBoxActive === true, 'display-n': modalBoxActive !== true}">
-      <span class="close" @click="closeModalBox">&times;</span>
-      <div class="margin-sides">
+    <div id="modal-box" class="modal" @click="closeModalBox" :class="{'display-f': modalBoxActive === true, 'display-n': modalBoxActive !== true}">
+      <span class="close" @click="modalBoxActive = !modalBoxActive">&times;</span>
+      <div class="modal-img-box margin-sides">
         <img class="modal-img" :src="enlargeImg" alt="">
+        <div
+          @click="sliderModalImg"
+          data-direction="prev"
+          class="arrow-modal"></div>
+        <div
+          @click="sliderModalImg"
+          data-direction="next"
+          class="arrow-modal"></div>
       </div>
     </div>
   </div>
@@ -481,32 +504,34 @@ export default {
       mobileScreen: null,
       modalBoxActive: Boolean,
       enlargeImg: String,
-      enlargeImgObj: {
-        studentCaseOne: {
+      selectedStudent: null,
+      selectedImg: '',
+      enlargeImgObj: [
+        {
           portfolio: 'static/enlarge/underg/undergraduate_portfolio_large1.jpg',
           offer: 'static/enlarge/underg/undergraduate_offer_large1.jpg'
         },
-        studentCaseTwo: {
+        {
           portfolio: 'static/enlarge/underg/undergraduate_portfolio_large2.jpg',
           offer: 'static/enlarge/underg/undergraduate_offer_large2.jpg'
         },
-        studentCaseThree: {
+        {
           portfolio: 'static/enlarge/underg/undergraduate_portfolio_large3.jpg',
           offer: 'static/enlarge/underg/undergraduate_offer_large3.jpg'
         },
-        studentCaseFour: {
+        {
           portfolio: 'static/enlarge/postg/postgraduate_portfolio_large1.jpg',
           offer: 'static/enlarge/postg/postgraduate_offer_large1.jpg'
         },
-        studentCaseFive: {
+        {
           portfolio: 'static/enlarge/postg/postgraduate_portfolio_large2.jpg',
           offer: 'static/enlarge/postg/postgraduate_offer_large2.jpg'
         },
-        studentCaseSix: {
+        {
           portfolio: 'static/enlarge/postg/postgraduate_portfolio_large3.jpg',
           offer: 'static/enlarge/postg/postgraduate_offer_large3.jpg'
         }
-      }
+      ]
     }
   },
   mounted () {
@@ -521,13 +546,53 @@ export default {
       (windowWidth <= 550) ? this.mobileScreen = true : this.mobileScreen = false
     },
     getEnlargeImg (event) {
-      const selectedStudent = event.target.dataset.enlarge
-      const selectedImg = event.target.dataset.current
-      this.enlargeImg = this.enlargeImgObj[selectedStudent][selectedImg]
+      this.selectedStudent = Number(event.target.dataset.enlarge)
+      this.selectedImg = event.target.dataset.current
+      this.enlargeImg = this.enlargeImgObj[this.selectedStudent][this.selectedImg]
       this.modalBoxActive = true
     },
-    closeModalBox () {
-      this.modalBoxActive = !this.modalBoxActive
+    closeModalBox (event) {
+      const modal = document.getElementById('modal-box')
+      if (event.target === modal) {
+        this.modalBoxActive = !this.modalBoxActive
+      }
+    },
+    sliderModalImg (event) {
+      (event.target.dataset.direction === 'next') ? this.slideNext() : this.slidePrev()
+      this.enlargeImg = this.enlargeImgObj[this.selectedStudent][this.selectedImg]
+
+      const imgAttr = document.querySelector('.modal-img-box img')
+      if (imgAttr.classList.contains('modal-img')) {
+        imgAttr.classList.remove('modal-img')
+        imgAttr.classList.add('modal-img-second')
+      } else {
+        imgAttr.classList.remove('modal-img-second')
+        imgAttr.classList.add('modal-img')
+      }
+    },
+    slideNext () {
+      if (this.selectedImg === 'portfolio') {
+        this.selectedImg = 'offer'
+      } else {
+        if (this.selectedStudent === 5) {
+          this.selectedStudent = 0
+        } else {
+          ++this.selectedStudent
+        }
+        this.selectedImg = 'portfolio'
+      }
+    },
+    slidePrev () {
+      if (this.selectedImg === 'offer') {
+        this.selectedImg = 'portfolio'
+      } else {
+        if (this.selectedStudent === 0) {
+          this.selectedStudent = 5
+        } else {
+          --this.selectedStudent
+        }
+        this.selectedImg = 'offer'
+      }
     }
   },
   beforeDestroy () {
@@ -552,9 +617,43 @@ export default {
   }
     .intro-ctx-box {
       width: 100%;
-      height: 100%;
-      background: plum;
+      height: auto;
+      /* background: rgb(221, 147, 147); */
     }
+
+    .intro-content {
+      text-align: left;
+    }
+      .intro-content h1 {
+        color: #fff;
+        margin: 0;
+        font-size: 4rem;
+        transform: translateX(-3.5px);
+      }
+        .intro-content h1 span,
+        .intro-content h3 span {
+          color: #b046aa
+        }
+      .intro-content h3 {
+        color: #fff;
+        display: inline-block;
+        margin: 0;
+        font-size: 1.7rem;
+      }
+      .intro-img-box {
+        display: block;
+        float: right;
+        height: 70px;
+      }
+        .intro-img {
+          height: 100%;
+        }
+      .intro-line {
+        max-width: 150px;
+        height: 5px;
+        background: #b046aa;
+        margin: 25px 0 100px 0;
+      }
 
 /* Disciplines GRID */
 .disciplines-wrap {
@@ -879,10 +978,59 @@ export default {
   height: 100%;
   background: rgba(0, 0, 0, 0.4);
 }
-  .modal-img {
-    display: block;
-    width: 100%;
+  .modal-img-box {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
+    .modal-img-box .arrow-modal {
+      content: '';
+      position: absolute;
+      top: 45%;
+      width: 19px;
+      height: 30px;
+      background: url(./assets/contactform/arrow-right.png) no-repeat center;
+      opacity: .5;
+      cursor: pointer;
+    }
+    .modal-img-box .arrow-modal:nth-child(2) {
+      left: 25px;
+      transform: rotate(180deg);
+      transform-origin: center center;
+    }
+    .modal-img-box .arrow-modal:last-child {
+      right: 25px;
+    }
+    .modal-img-box .arrow-modal:hover {
+      opacity: 1;
+    }
+
+    .modal-img {
+      display: block;
+      width: 100%;
+      animation: scaleUp 500ms;
+      transform: scale(0);
+      animation-fill-mode: forwards;
+    }
+    @keyframes scaleUp {
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    .modal-img-second {
+      display: block;
+      width: 100%;
+      animation: scaleUpp 500ms;
+      transform: scale(0);
+      animation-fill-mode: forwards;
+    }
+    @keyframes scaleUpp {
+      100% {
+        transform: scale(1);
+      }
+    }
 
   .close {
     position: absolute;
@@ -998,6 +1146,7 @@ export default {
     }
     .section-main-box:first-child {
       margin-top: 50px;
+      margin-bottom: 25px;
     }
 
   .staff-box-ctx {
@@ -1017,6 +1166,10 @@ export default {
     .univer-img-box .univer-pic:nth-child(7) {
       margin: auto;
     }
+
+  .stu-case-box {
+    margin: 25px 0;
+  }
 
   .stud-case-p {
     margin-top: 12.5px;
