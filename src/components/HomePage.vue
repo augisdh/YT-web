@@ -13,7 +13,7 @@
             <h3>
               你一直在寻找的艺术留学名师聚集地。<br>
               我们成功将学生输送到
-              <span>美国帕森斯设计学院...</span>
+              <span class="changing-text">{{ introText }}</span>
             </h3>
             <div class="intro-img-box">
               <img class="intro-img" src="./assets/homepage/topcover/Young_Talent_logo_white.png" alt="">
@@ -25,82 +25,104 @@
     <div class="disciplines-wrap d-flex-center">
       <div class="disciplines-grid container margin-sides shadow">
         <div class="industrial-d">
-          <img src="./assets/homepage/disciplines/industrial.jpg" alt="">
-          <div class="sub-ctx">
-            <h3>工业设计</h3>
-            <h5>Industrial Design</h5>
-          </div>
+          <router-link to="/courses">
+            <img src="./assets/homepage/disciplines/industrial.jpg" alt="">
+            <div class="sub-ctx">
+              <h3>工业设计</h3>
+              <h5>Industrial Design</h5>
+            </div>
+          </router-link>
         </div>
         <div class="film">
-          <img src="./assets/homepage/disciplines/filming.jpg" alt="">
-          <div class="sub-ctx">
-            <h3>影视制作</h3>
-            <h5>Film</h5>
-          </div>
+          <router-link to="/courses">
+            <img src="./assets/homepage/disciplines/filming.jpg" alt="">
+            <div class="sub-ctx">
+              <h3>影视制作</h3>
+              <h5>Film</h5>
+            </div>
+          </router-link>
         </div>
         <div class="arts">
-          <img src="./assets/homepage/disciplines/fine_arts.jpg" alt="">
-          <div class="sub-ctx">
-            <h3>纯艺术</h3>
-            <h5>Fine Arts</h5>
-          </div>
+          <router-link to="/courses">
+            <img src="./assets/homepage/disciplines/fine_arts.jpg" alt="">
+            <div class="sub-ctx">
+              <h3>纯艺术</h3>
+              <h5>Fine Arts</h5>
+            </div>
+          </router-link>
         </div>
         <div class="fashion-d">
-          <img src="./assets/homepage/disciplines/fashion_design.jpg" alt="">
-          <div class="sub-ctx">
-            <h3>服装设计 &<br> 时尚管理</h3>
-            <h5>Fashion Design<br> & Management</h5>
-          </div>
+          <router-link to="/courses">
+            <img src="./assets/homepage/disciplines/fashion_design.jpg" alt="">
+            <div class="sub-ctx">
+              <h3>服装设计 &<br> 时尚管理</h3>
+              <h5>Fashion Design<br> & Management</h5>
+            </div>
+          </router-link>
         </div>
         <div class="interior-d">
-          <img src="./assets/homepage/disciplines/interior_design.jpg" alt="">
-          <div class="sub-ctx">
-            <h3>室内设计</h3>
-            <h5>Interior Design</h5>
-          </div>
+          <router-link to="/courses">
+            <img src="./assets/homepage/disciplines/interior_design.jpg" alt="">
+            <div class="sub-ctx">
+              <h3>室内设计</h3>
+              <h5>Interior Design</h5>
+            </div>
+          </router-link>
         </div>
         <div class="jewellery-d">
-          <img src="./assets/homepage/disciplines/jewellery_design.jpg" alt="">
-          <div class="sub-ctx">
-            <h3>珠宝设计</h3>
-            <h5>Jewellery Design</h5>
-          </div>
+          <router-link to="/courses">
+            <img src="./assets/homepage/disciplines/jewellery_design.jpg" alt="">
+            <div class="sub-ctx">
+              <h3>珠宝设计</h3>
+              <h5>Jewellery Design</h5>
+            </div>
+          </router-link>
         </div>
         <div class="graphic-d">
-          <img v-if="mobileScreen === false" src="./assets/homepage/disciplines/graphic_design.jpg" alt="">
-          <img v-if="mobileScreen === true" src="./assets/homepage/disciplines/graphic_design_sm.jpg" alt="">
-          <div class="sub-ctx">
-            <h3>平麵设计</h3>
-            <h5>Graphic Design</h5>
-          </div>
+          <router-link to="/courses">
+            <img v-if="mobileScreen === false" src="./assets/homepage/disciplines/graphic_design.jpg" alt="">
+            <img v-if="mobileScreen === true" src="./assets/homepage/disciplines/graphic_design_sm.jpg" alt="">
+            <div class="sub-ctx">
+              <h3>平麵设计</h3>
+              <h5>Graphic Design</h5>
+            </div>
+          </router-link>
         </div>
         <div class="anim">
-          <img src="./assets/homepage/disciplines/animation.jpg" alt="">
-          <div class="sub-ctx">
-            <h3>動画</h3>
-            <h5>Animation</h5>
-          </div>
+          <router-link to="/courses">
+            <img src="./assets/homepage/disciplines/animation.jpg" alt="">
+            <div class="sub-ctx">
+              <h3>動画</h3>
+              <h5>Animation</h5>
+            </div>
+          </router-link>
         </div>
         <div class="photography">
-          <img src="./assets/homepage/disciplines/fotography.jpg" alt="">
-          <div class="sub-ctx">
-            <h3>摄影</h3>
-            <h5>Photography</h5>
-          </div>
+          <router-link to="/courses">
+            <img src="./assets/homepage/disciplines/fotography.jpg" alt="">
+            <div class="sub-ctx">
+              <h3>摄影</h3>
+              <h5>Photography</h5>
+            </div>
+          </router-link>
         </div>
         <div class="interaction-d">
-          <img src="./assets/homepage/disciplines/interactive_design.jpg" alt="">
-          <div class="sub-ctx">
-            <h3>交互设计</h3>
-            <h5>Interaction Design</h5>
-          </div>
+          <router-link to="/courses">
+            <img src="./assets/homepage/disciplines/interactive_design.jpg" alt="">
+            <div class="sub-ctx">
+              <h3>交互设计</h3>
+              <h5>Interaction Design</h5>
+            </div>
+          </router-link>
         </div>
         <div class="visual-c">
-          <img src="./assets/homepage/disciplines/visual_communication.jpg" alt="">
-          <div class="sub-ctx">
-            <h3>视觉传达</h3>
-            <h5>Visual Communication</h5>
-          </div>
+          <router-link to="/courses">
+            <img src="./assets/homepage/disciplines/visual_communication.jpg" alt="">
+            <div class="sub-ctx">
+              <h3>视觉传达</h3>
+              <h5>Visual Communication</h5>
+            </div>
+          </router-link>
         </div>
       </div>
     </div>
@@ -118,7 +140,9 @@
             <h1>
               BUILD YOUR PORTFOLIO, <br> JOIN OUR COMMUNITY...
             </h1>
-            <div class="portfolio-arrow"></div>
+            <router-link to="/about">
+              <div class="portfolio-arrow"></div>
+            </router-link>
           </div>
         </div>
         <div class="section-box d-flex-staff shadow">
@@ -493,6 +517,17 @@
 
 <script>
 import navMenu from './NavigationMenu'
+import animateScrollTo from 'animated-scroll-to'
+
+const options = {
+  speed: 1,
+  minDuration: 2000,
+  maxDuration: 2000
+}
+
+window.addEventListener('load', () => {
+  animateScrollTo(document.querySelector('.disciplines-wrap'), options)
+})
 
 export default {
   name: 'HomePage',
@@ -501,6 +536,16 @@ export default {
   },
   data () {
     return {
+      introText: '美国帕森斯设计学院...',
+      introTextArray: [
+        '美国帕森斯设计学院...',
+        '英国中央圣马丁...',
+        '英国皇家艺术学院...',
+        '伦敦艺术大学...',
+        '罗德岛设计学院...',
+        '纽约时装学院...',
+        '等...'
+      ],
       mobileScreen: null,
       modalBoxActive: Boolean,
       enlargeImg: String,
@@ -539,8 +584,30 @@ export default {
       window.addEventListener('resize', this.getWindowWidth)
       this.getWindowWidth()
     })
+    this.changeIntroText()
   },
   methods: {
+    changeIntroText () {
+      this.$options.interval = setInterval(() => {
+        const changingText = document.querySelector('.intro-content h3 span')
+        const arrLength = this.introTextArray.length
+        const index = this.introTextArray.indexOf(this.introText)
+
+        if (index < arrLength - 1) {
+          this.introText = this.introTextArray[index + 1]
+        } else {
+          this.introText = this.introTextArray[0]
+        }
+
+        if (changingText.classList.contains('changing-text')) {
+          changingText.classList.remove('changing-text')
+          changingText.classList.add('changing-text-n')
+        } else {
+          changingText.classList.remove('changing-text-n')
+          changingText.classList.add('changing-text')
+        }
+      }, 2000)
+    },
     getWindowWidth (event) {
       const windowWidth = document.documentElement.clientWidth;
       (windowWidth <= 550) ? this.mobileScreen = true : this.mobileScreen = false
@@ -597,6 +664,7 @@ export default {
   },
   beforeDestroy () {
     window.removeEventListener('resize', this.getWindowWidth)
+    clearInterval(this.$options.interval)
   }
 }
 </script>
@@ -634,6 +702,9 @@ export default {
         .intro-content h3 span {
           color: #b046aa
         }
+        .intro-content h3 span {
+          display: inline-block;
+        }
       .intro-content h3 {
         color: #fff;
         display: inline-block;
@@ -653,6 +724,27 @@ export default {
         height: 5px;
         background: #b046aa;
         margin: 25px 0 100px 0;
+      }
+
+      .changing-text {
+        animation: opacityUp 500ms;
+        opacity: 0;
+        animation-fill-mode: forwards;
+      }
+      @keyframes opacityUp {
+        100% {
+          opacity: 1;
+        }
+      }
+      .changing-text-n {
+        animation: opacityUpN 500ms;
+        opacity: 0;
+        animation-fill-mode: forwards;
+      }
+      @keyframes opacityUpN {
+        100% {
+          opacity: 1;
+        }
       }
 
 /* Disciplines GRID */
@@ -1091,6 +1183,25 @@ export default {
 }
 
 @media (max-width: 550px){
+  .intro-content h1 {
+    font-size: 3.5rem;
+  }
+  .intro-img-box {
+    margin-top: 25px;
+  }
+  .intro-content h3 {
+    font-size: 1.3rem;
+    line-height: 1.8rem;
+  }
+  .changing-text,
+  .changing-text-n {
+    width: 100%;
+  }
+  .intro-line {
+    width: 100px;
+    margin: 15px 0 40px 0;
+  }
+
   .disciplines-wrap {
     padding: 75px 0 50px 0;
   }
