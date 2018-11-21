@@ -496,7 +496,6 @@
         </div>
       </div>
     </div>
-
     <!-- Modal BOX -->
     <div id="modal-box" class="modal" @click="closeModalBox" :class="{'display-f': modalBoxActive === true, 'display-n': modalBoxActive !== true}">
       <span class="close" @click="modalBoxActive = !modalBoxActive">&times;</span>

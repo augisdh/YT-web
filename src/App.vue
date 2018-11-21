@@ -2,7 +2,6 @@
   <div id="app">
     <router-view v-if="mobileScreen === true" v-bind:mob-screen="true"></router-view>
     <router-view v-if="mobileScreen === false"></router-view>
-
     <footer>
       <p class="footer-ctx margin-sides">沪ICP备18024906号-1 Copyright © 2018 上海洋檀棱桃文化传播有限公司</p>
     </footer>

@@ -8,7 +8,6 @@
         </div>
         <div class="yellow-bg"></div>
       </div>
-
       <div class="about-content-wrap d-flex-center">
         <div class="about-content container margin-sides">
           <div class="about-us-rel">
@@ -31,8 +30,8 @@
               </div>
               <div class="about-us-line line"></div>
             </div>
+            <div class="yellow-line"></div>
           </div>
-
           <div class="about-box shadow">
             <div class="about-content-box">
               <div class="about-content-card">
@@ -205,6 +204,15 @@ export default {
     }
 
 /* Lines etc.. */
+.yellow-line {
+  display: block;
+  position: absolute;
+  left: 100px;
+  bottom: -100px;
+  height: 150px;
+  width: 5px;
+  background-color: #fccd0f;
+}
 .line {
   width: 100px;
   height: 5px;
@@ -242,10 +250,10 @@ export default {
   }
 }
 
-@media (max-width: 650px) {
+@media (max-width: 750px){
   .about-us-wrap {
     top: -50px;
-    max-width: 650px;
+    max-width: 750px;
   }
 
   .about-box {
@@ -260,8 +268,14 @@ export default {
     width: 100%
   }
 
+  .yellow-line {
+    display: none;
+  }
   .consulting-line {
     display: block;
+  }
+  .about-us-line {
+    margin-right: 50px;
   }
 }
 
@@ -289,7 +303,7 @@ export default {
   }
   .about-us-line {
     float: left;
-    margin-left: 25px;
+    margin: 0 0 25px 25px;
   }
   .community-line {
     align-self: flex-end;
