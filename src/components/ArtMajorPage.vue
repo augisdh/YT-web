@@ -12,6 +12,25 @@ export default {
   name: 'ArtMajorPage',
   components: {
     navMenu
+  },
+  data () {
+    return {
+      mobileScreen: null
+    }
+  },
+  mounted () {
+    this.$nextTick(function () {
+      window.addEventListener('resize', this.checkScreen)
+      this.checkScreen()
+    })
+  },
+  methods: {
+    checkScreen (event) {
+      (document.querySelector('.main-wrapper').attributes[2]) ? this.mobileScreen = true : this.mobileScreen = false
+    }
+  },
+  beforeDestroy () {
+    window.removeEventListener('resize', this.checkScreen)
   }
 }
 </script>

@@ -10,6 +10,9 @@ import UniversitiesPage from '@/components/UniversitiesPage'
 Vue.use(Router)
 
 export default new Router({
+  scrollBehavior () {
+    return { x: 0, y: 0 }
+  },
   routes: [
     {
       path: '/',

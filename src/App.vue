@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-    <router-view></router-view>
+    <router-view v-if="mobileScreen === true" v-bind:mob-screen="true"></router-view>
+    <router-view v-if="mobileScreen === false"></router-view>
 
     <footer>
       <p class="footer-ctx margin-sides">沪ICP备18024906号-1 Copyright © 2018 上海洋檀棱桃文化传播有限公司</p>
@@ -10,7 +11,27 @@
 
 <script>
 export default {
-  name: 'App'
+  name: 'App',
+  props: {
+    mobScreen: Boolean
+  },
+  data () {
+    return {
+      mobileScreen: null
+    }
+  },
+  mounted () {
+    this.$nextTick(function () {
+      window.addEventListener('resize', this.getWindowWidth)
+      this.getWindowWidth()
+    })
+  },
+  methods: {
+    getWindowWidth (event) {
+      const windowWidth = document.documentElement.clientWidth;
+      (windowWidth <= 550) ? this.mobileScreen = true : this.mobileScreen = false
+    }
+  }
 }
 </script>
 

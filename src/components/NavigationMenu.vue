@@ -25,13 +25,26 @@ export default {
   name: 'NavigationMenu',
   data () {
     return {
+      mobileScreen: null,
       burgerActive: null
     }
   },
+  mounted () {
+    this.$nextTick(function () {
+      window.addEventListener('resize', this.checkScreen)
+      this.checkScreen()
+    })
+  },
   methods: {
+    checkScreen (event) {
+      (document.querySelector('.main-wrapper').attributes[2]) ? this.mobileScreen = true : this.mobileScreen = false
+    },
     burgerClick () {
       (this.burgerActive === null) ? this.burgerActive = true : this.burgerActive = !this.burgerActive
     }
+  },
+  beforeDestroy () {
+    window.removeEventListener('resize', this.checkScreen)
   }
 }
 </script>

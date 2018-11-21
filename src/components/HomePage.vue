@@ -581,8 +581,8 @@ export default {
   },
   mounted () {
     this.$nextTick(function () {
-      window.addEventListener('resize', this.getWindowWidth)
-      this.getWindowWidth()
+      window.addEventListener('resize', this.checkScreen)
+      this.checkScreen()
     })
     this.changeIntroText()
   },
@@ -608,9 +608,8 @@ export default {
         }
       }, 2000)
     },
-    getWindowWidth (event) {
-      const windowWidth = document.documentElement.clientWidth;
-      (windowWidth <= 550) ? this.mobileScreen = true : this.mobileScreen = false
+    checkScreen (event) {
+      (document.querySelector('.main-wrapper').attributes[2]) ? this.mobileScreen = true : this.mobileScreen = false
     },
     getEnlargeImg (event) {
       this.selectedStudent = Number(event.target.dataset.enlarge)
@@ -663,7 +662,7 @@ export default {
     }
   },
   beforeDestroy () {
-    window.removeEventListener('resize', this.getWindowWidth)
+    window.removeEventListener('resize', this.checkScreen)
     clearInterval(this.$options.interval)
   }
 }
@@ -686,7 +685,6 @@ export default {
     .intro-ctx-box {
       width: 100%;
       height: auto;
-      /* background: rgb(221, 147, 147); */
     }
 
     .intro-content {
