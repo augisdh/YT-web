@@ -25,8 +25,8 @@ export default {
     })
   },
   methods: {
-    checkScreen (event) {
-      (document.querySelector('.main-wrapper').attributes[2]) ? this.mobileScreen = true : this.mobileScreen = false
+    checkScreen () {
+      (document.querySelector('.main-wrapper').getAttributeNode('mob-screen')) ? this.mobileScreen = true : this.mobileScreen = false
     }
   },
   beforeDestroy () {

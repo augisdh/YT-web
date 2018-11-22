@@ -26,7 +26,7 @@ export default {
     })
   },
   methods: {
-    getWindowWidth (event) {
+    getWindowWidth () {
       const windowWidth = document.documentElement.clientWidth;
       (windowWidth <= 550) ? this.mobileScreen = true : this.mobileScreen = false
     }

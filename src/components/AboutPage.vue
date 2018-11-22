@@ -100,8 +100,8 @@ export default {
     })
   },
   methods: {
-    checkScreen (event) {
-      (document.querySelector('.main-wrapper').attributes[2]) ? this.mobileScreen = true : this.mobileScreen = false
+    checkScreen () {
+      (document.querySelector('.main-wrapper').getAttributeNode('mob-screen')) ? this.mobileScreen = true : this.mobileScreen = false
     },
     changeAboutUsDivHeight () {
       (window.innerWidth < 1151) ? document.querySelector('.about-us-rel').style.height = `${document.querySelector('.about-us-wrap').offsetTop + document.querySelector('.about-us-wrap').offsetHeight}px` : document.querySelector('.about-us-rel').removeAttribute('style')
