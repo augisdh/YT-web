@@ -152,8 +152,12 @@
                     <img src="./assets/coursespage/course_d/B4-1.jpg" alt="">
                   </div>
                   <div class="b-course-ctx">
-                    <h3></h3>
-                    <p></p>
+                    <h3>平面设计软件课</h3>
+                    <ul>
+                      <li>Photoshop</li>
+                      <li>Illustrator</li>
+                      <li>InDesign</li>
+                    </ul>
                   </div>
                 </div>
                 <div class="b-course shadow">
@@ -161,8 +165,12 @@
                     <img src="./assets/coursespage/course_d/B4-2.jpg" alt="">
                   </div>
                   <div class="b-course-ctx">
-                    <h3></h3>
-                    <p></p>
+                    <h3>工业设计软件课</h3>
+                    <ul>
+                      <li>Rhino（犀牛）</li>
+                      <li>Keyshot</li>
+                      <li>CAD</li>
+                    </ul>
                   </div>
                 </div>
               </div>
@@ -172,8 +180,12 @@
                     <img src="./assets/coursespage/course_d/B4-3.jpg" alt="">
                   </div>
                   <div class="b-course-ctx">
-                    <h3></h3>
-                    <p></p>
+                    <h3>珠宝设计软件课</h3>
+                    <ul>
+                      <li>Rhino（犀牛）</li>
+                      <li>Keyshot</li>
+                      <li>CorelDraw</li>
+                    </ul>
                   </div>
                 </div>
                 <div class="b-course shadow">
@@ -181,9 +193,98 @@
                     <img src="./assets/coursespage/course_d/B4-4.jpg" alt="">
                   </div>
                   <div class="b-course-ctx">
-                    <h3></h3>
-                    <p></p>
+                    <h3>基础手绘课</h3>
+                    <ul>
+                      <li>工业设计手绘</li>
+                      <li>珠宝设计手绘</li>
+                      <li>素描、水粉</li>
+                      <li>插画</li>
+                      <li>电脑绘画</li>
+                    </ul>
                   </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="work-course-box">
+            <div class="work-course-head">
+              <h4>
+              工坊兴趣课
+                <span>WORKSHOP COURSES</span>
+              </h4>
+            </div>
+            <div class="work-course-content-wrap shadow">
+              <div class="work-course-content">
+                <div class="work-gallery">
+                  <div class="w-img">
+                    <img src="./assets/coursespage/courses_e/B5-1.jpg" alt="">
+                    <div class="w-img-text">
+                      <h5>硅胶</h5>
+                    </div>
+                  </div>
+                  <div class="w-img">
+                    <img src="./assets/coursespage/courses_e/B5-2.jpg" alt="">
+                    <div class="w-img-text">
+                      <h5>树脂</h5>
+                    </div>
+                  </div>
+                </div>
+                <div class="work-gallery">
+                  <div class="w-img">
+                    <img src="./assets/coursespage/courses_e/B5-3.jpg" alt="">
+                    <div class="w-img-text">
+                      <h5>亚克力</h5>
+                    </div>
+                  </div>
+                  <div class="w-img">
+                    <img src="./assets/coursespage/courses_e/B5-4.jpg" alt="">
+                    <div class="w-img-text">
+                      <h5>皮革</h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="work-course-content-head">
+                <h3>综合材料课</h3>
+              </div>
+            </div>
+            <div class="work-course-content-wrap">
+              <div class="w-course-content-box shadow">
+                <div class="work-gallery">
+                  <div class="w-img">
+                    <img src="./assets/coursespage/courses_e/B5-5.jpg" alt="">
+                    <div class="w-img-text">
+                      <h5>丝网印刷</h5>
+                    </div>
+                  </div>
+                  <div class="w-img">
+                    <img src="./assets/coursespage/courses_e/B5-6.jpg" alt="">
+                    <div class="w-img-text">
+                      <h5>书籍装置</h5>
+                    </div>
+                  </div>
+                </div>
+                <div class="work-course-content-head">
+                  <h3>视觉传达</h3>
+                </div>
+              </div>
+              <div class="w-course-content-box shadow">
+                <div class="work-gallery">
+                  <div class="w-img">
+                    <img src="./assets/coursespage/courses_e/B5-7.jpg" alt="">
+                    <div class="w-img-text">
+                      <h5>雕塑纯艺</h5>
+                    </div>
+                  </div>
+                  <div class="w-img">
+                    <img src="./assets/coursespage/courses_e/B5-8.jpg" alt="">
+                    <div class="w-img-text">
+                      <h5>首飾制作</h5>
+                    </div>
+                  </div>
+                </div>
+                <div class="work-course-content-head">
+                  <h3>3D造型</h3>
                 </div>
               </div>
             </div>
@@ -274,14 +375,16 @@ export default {
       .w-port-content > h4,
       .port-course-head > h4,
       .vip-prog-head > h4,
-      .b-course-head h4 {
+      .b-course-head > h4,
+      .work-course-head > h4 {
         margin: 0 0 50px 0;
         font-size: 2rem;
       }
         .w-port-content > h4 span,
         .port-course-head > h4 span,
         .vip-prog-head > h4 span,
-        .b-course-head h4 span {
+        .b-course-head > h4 span,
+        .work-course-head > h4 span {
           display: block;
           font-size: 1rem;
         }
@@ -411,15 +514,91 @@ export default {
         }
 
       .b-course-ctx {
-        height: 200px;
-        background-color: #b046aa;
+        text-align: left;
       }
         .b-course-ctx > h3 {
-          margin: 0;
+          margin: 25px;
+          font-size: 1.25rem;
         }
-        .b-course-ctx > p {
-          margin: 0;
+        .b-course-ctx > ul {
+          list-style: none;
+          margin: 0 0 50px 25px;
+          padding: 0;
+          font-size: 1rem
         }
+
+  /* WORKSHOP COURSES */
+  .work-course-content-wrap {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 50px;
+  }
+  .work-course-content-wrap:last-child {
+    margin-bottom: 125px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .work-course-content {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+    .work-gallery {
+      display: flex;
+      flex-direction: row;
+      flex: 100;
+      min-width: 250.1px;
+    }
+      .w-img {
+        position: relative;
+      }
+        .w-img > img {
+          display: block;
+          width: 100%;
+        }
+
+        .w-img-text {
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+        }
+          .w-img-text > h5 {
+            font-size: 1rem;
+            text-align: left;
+            margin: 25px 0 0 25px;
+          }
+
+  .work-course-content-head {
+    background-color: #fff;
+    text-align: center;
+  }
+    .work-course-content-head > h3 {
+      margin: 12.5px 0;
+      font-size: 1.25rem;
+    }
+
+  .w-course-content-box {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    flex: 100;
+    min-width: 250.1px;
+    margin-bottom: 25px;
+  }
+  .w-course-content-box:first-child {
+    margin-right: 25px;
+  }
+
+    .w-course-content-box .work-gallery {
+      position: relative;
+      justify-content: center;
+    }
 
 /* Lines, etc... */
 .w-port-line {
@@ -429,6 +608,32 @@ export default {
   width: 150px;
   height: 5px;
   background-color: #b046aa;
+}
+.work-course-content::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background-color: #fccd0f;
+}
+.w-course-content-box .work-gallery::after {
+  content: '';
+  position: absolute;
+}
+.w-course-content-box:first-child .work-gallery::after {
+  top: 0;
+  bottom: 0;
+  width: 5px;
+  background-color: #b046aa;
+}
+.w-course-content-box:last-child .work-gallery::after {
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background-color: #23e8be;
 }
 
 /* @Media */
@@ -482,6 +687,12 @@ export default {
   }
 }
 
+@media (max-width: 575px){
+  .w-course-content-box:first-child {
+    margin-right: 0;
+  }
+}
+
 @media (max-width: 550px) {
   .port-head-wrapper > img {
     bottom: -50px;
@@ -500,7 +711,8 @@ export default {
       .w-port-content > h4,
       .port-course-head > h4,
       .vip-prog-head > h4,
-      .b-course-head h4 {
+      .b-course-head > h4,
+      .work-course-head > h4 {
         margin: 0 0 25px 0;
       }
       .w-port-content > h4 {
@@ -584,12 +796,50 @@ export default {
     .b-course:first-child {
       margin-right: 12.5px;
     }
+        .b-course-ctx > h3 {
+          font-size: 16px;
+          margin: 12.5px;
+        }
+        .b-course-ctx > ul {
+          list-style: none;
+          margin: 0 0 12.5px 12.5px;
+          padding: 0;
+          font-size: 1rem
+        }
+
+  /* WORKSHOP COURSES */
+  .w-img-text > h5 {
+    margin: 12.5px 0 0 12.5px;
+  }
+  .work-course-content-head > h3 {
+    margin: 8px 0;
+    font-size: 1.25rem;
+  }
+  .work-course-content-wrap {
+    margin-bottom: 25px;
+  }
+  .work-course-content-wrap:last-child {
+    margin-bottom: 50px;
+  }
 
   /* Lines */
   .w-port-line {
     right: -25px;
     width: 75px;
     bottom: 25px;
+  }
+  .work-course-content::after {
+    top: 0;
+    left: unset;
+    right: unset;
+    width: 5px;
+    height: 100%;
+  }
+  .w-course-content-box:last-child .work-gallery::after {
+    left: unset;
+    right: unset;
+    width: 5px;
+    height: 100%;
   }
 }
 
