@@ -1,6 +1,7 @@
 <template>
   <div class="main-wrapper">
     <div class="staff-wrap">
+      <navMenu></navMenu>
       <div class="staff-head">
         <img v-if="mobileScreen === false" src="./assets/staffpage/staff_background.jpg" alt="">
         <img v-if="mobileScreen === true" src="./assets/staffpage/staff_background_mobile.jpg" alt="">

@@ -1,6 +1,5 @@
 <template>
   <div class="main-wrapper">
-      <!-- <navMenu></navMenu> -->
       <h1>UNIVERSITIES PAGE</h1>
   </div>
 </template>

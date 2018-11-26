@@ -1,6 +1,6 @@
 <template>
   <div class="main-wrapper">
-    <div class="intro-wrap d-flex-center">
+    <!-- <div class="intro-wrap d-flex-center">
       <div class="intro-ctx-wrap container margin-sides">
         <div class="intro-ctx-box">
           <div class="intro-content">
@@ -21,7 +21,8 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
+    <navMenu></navMenu>
     <div class="disciplines-wrap d-flex-center">
       <div class="disciplines-grid container margin-sides shadow">
         <div class="industrial-d">
@@ -669,6 +670,10 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.main-wrapper {
+  background-color: #fafafa;
+  width: 100%;
+}
 /* Intro SCROLL DOWN */
 .intro-wrap {
   width: 100%;

@@ -1,6 +1,7 @@
 <template>
   <div class="main-wrapper">
     <div class="about-wrap">
+      <navMenu></navMenu>
       <div class="about-head">
         <div class="about-head-img">
           <img v-if="mobileScreen === false" class="about-head-img" src="./assets/aboutpage/about_head.jpg" alt="">
@@ -241,10 +242,6 @@ export default {
     .about-head-img {
       max-width: 1150px;
     }
-    .yellow-bg {
-      height: 75px;
-    }
-
   .about-us-wrap {
     top: -250px;
   }

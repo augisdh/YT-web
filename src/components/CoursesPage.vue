@@ -1,6 +1,7 @@
 <template>
   <div class="main-wrapper">
     <div class="courses-wrap">
+      <navMenu></navMenu>
       <div class="courses-head">
         <div class="courses-head-img d-flex-center">
           <div class="port-head-wrapper container margin-sides">

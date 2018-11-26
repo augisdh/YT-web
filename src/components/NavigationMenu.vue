@@ -1,21 +1,109 @@
 <template>
   <div>
-    <div class="menu-bg" :class="{'active': burgerActive === true, 'inactive': burgerActive !== true}">
-      <div class="menu-ctx">
-        <div class="routes">
-          <router-link to="/">Home</router-link>
-          <router-link to="/about">About</router-link>
-          <router-link to="/courses">Courses</router-link>
-          <router-link to="/staff">Staff</router-link>
-          <router-link to="/art-major">Art Major</router-link>
-          <router-link to="/universities">Universities</router-link>
+    <div class="menu-bar">
+      <div class="menu-fixed" :class="{'full-height': burgerActive === true}">
+        <div class="menu-home">
+          <router-link to="/" data-color="purple"></router-link>
+        </div>
+        <div class="menu-burger">
+          <img @click="burgerClick" :class="{'active': burgerActive !== true, 'inactive': burgerActive === true}" src="./assets/contactform/burger-icon.png" alt="">
+          <img @click="burgerClick" :class="{'active': burgerActive === true, 'inactive': burgerActive !== true}" src="./assets/contactform/x-icon-blue.png" alt="">
+        </div>
+
+        <div class="menu-bg" :class="{'active-f': burgerActive === true, 'inactive': burgerActive !== true}">
+          <div class="menu-ctx">
+            <div class="menu-routes">
+              <router-link to="/about" data-color="yellow">
+                <h4>
+                  关于洋桃
+                  <span>ABOUT</span>
+                </h4>
+              </router-link>
+              <router-link to="/courses" data-color="white">
+                <h4>
+                  洋桃课程
+                  <span>COURSES</span>
+                </h4>
+              </router-link>
+              <router-link to="/staff" data-color="white">
+                <h4>
+                  洋桃导师
+                  <span>STAFF</span>
+                </h4>
+              </router-link>
+              <router-link to="/art-major" data-color="white">
+                <h4>
+                  艺术专业
+                  <span>ART MAJOR</span>
+                </h4>
+              </router-link>
+              <router-link to="/universities" data-color="white">
+                <h4>
+                  艺术院校
+                  <span>UNIVERSITIES</span>
+                </h4>
+              </router-link>
+              <router-link to="/contact">
+                <h4>
+                  联系我们
+                  <span>CONTACT US</span>
+                </h4>
+              </router-link>
+            </div>
+            <div v-if="mobileScreen !== true" class="menu-contact">
+              <div class="contact-i">
+                <h4>
+                  联系邮箱
+                  <span>info@youngtalent.cn</span>
+                </h4>
+                <h4>
+                  咨询电话
+                  <span>400-961-1108</span>
+                </h4>
+                <h4>
+                  总部地址
+                  <span>上海市静安区威海路696号</span>
+                </h4>
+              </div>
+              <div class="contact-qr">
+                <div class="icons-box">
+                  <div class="icon-img weibo">
+                    <a href="https://weibo.com/youngtalent" target="_blank"></a>
+                  </div>
+                  <div class="icon-img insta">
+                    <a href="https://www.instagram.com/youngtalentchina" target="_blank"></a>
+                  </div>
+                  <div class="icon-img douban">
+                    <a href="https://www.douban.com/people/young-talent" target="_blank"></a>
+                  </div>
+                  <div class="icon-img zhihu">
+                    <a href="https://www.zhihu.com/people/liu-chang-48-12/activities" target="_blank"></a>
+                  </div>
+                  <div class="icon-img qq"></div>
+                  <div class="icon-img wechat"></div>
+                </div>
+                <div class="qr-box">
+                  <div class="qr-code">
+                    <img src="@/assets/navmenu/1Cassie-wechat-QRcode.png" alt="">
+                    <div class="qr-ctx">
+                      <h4>扫一扫</h4>
+                      <h4>联系专业导师</h4>
+                    </div>
+                  </div>
+                  <div class="qr-code">
+                    <img src="@/assets/navmenu/2wechat--QRcode2.png" alt="">
+                    <div class="qr-ctx">
+                      <h4>扫一扫</h4>
+                      <h4>关注微信公众号 :</h4>
+                      <h4>youngtalentchina</h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-
-    <div class="menu-bar nav-bar-position">
-      <img @click="burgerClick" :class="{'active': burgerActive !== true, 'inactive': burgerActive === true}" src="./assets/contactform/burger-icon.png" alt="">
-      <img @click="burgerClick" :class="{'active': burgerActive === true, 'inactive': burgerActive !== true}" src="./assets/contactform/x-icon-blue.png" alt="">
     </div>
   </div>
 </template>
@@ -33,6 +121,8 @@ export default {
     this.$nextTick(function () {
       window.addEventListener('resize', this.checkScreen)
       this.checkScreen()
+      window.addEventListener('resize', this.routerActive)
+      this.routerActive()
     })
   },
   methods: {
@@ -41,6 +131,24 @@ export default {
     },
     burgerClick () {
       (this.burgerActive === null) ? this.burgerActive = true : this.burgerActive = !this.burgerActive
+    },
+    routerActive () {
+      const menuColor = document.querySelector('.is-active').dataset.color
+      if (document.querySelector('.is-active').href !== 'http://localhost:8080/') {
+        document.querySelector('.is-active h4').classList.add('active-m')
+        document.querySelector('.is-active h4 span').classList.add('active-m')
+      }
+
+      if (menuColor === 'purple') {
+        document.querySelector('.menu-bar').classList.add('purple-bg')
+        document.querySelector('.menu-fixed').classList.add('purple-bg')
+      } else if (menuColor === 'yellow') {
+        document.querySelector('.menu-bar').classList.add('yellow-bg')
+        document.querySelector('.menu-fixed').classList.add('yellow-bg')
+      } else {
+        document.querySelector('.menu-bar').classList.add('white-bg')
+        document.querySelector('.menu-fixed').classList.add('white-bg')
+      }
     }
   },
   beforeDestroy () {
@@ -51,37 +159,206 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.menu-bg {
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.7);
-  z-index: 5;
-  display: flex;
-  justify-content: flex-end;
-}
-
-  .menu-ctx {
-    max-width: 850px;
-    width: 100%;
-    height: 100%;
-    background: #fccd0f;
-    margin-left: 20px;
-    transition: all 0.3s;
-  }
-
-.menu-bar > img {
-  width: 40px;
-  height: 40px;
-  cursor: pointer;
-}
-
 .inactive {
   display: none;
 }
 .active {
+  display: block;
+}
+.active-f {
   display: flex;
+}
+.active-m {
+  color: #23e8be;
+}
+
+.menu-bar {
+  width: 100%;
+}
+  .menu-fixed {
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+  }
+  .menu-home {
+    position: relative;
+    width: 40px;
+    padding-bottom: 80px;
+    background: url('./assets/contactform/young_talent_logo_cn_vertical_black.png') no-repeat center;
+    background-size: 100%;
+    margin-left: 70px;
+  }
+    .menu-home > a {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      text-decoration: none;
+    }
+  .menu-burger {
+    margin-right: 70px;
+    z-index: 15;
+  }
+  .menu-burger > img {
+    width: 40px;
+    height: auto;
+    cursor: pointer;
+  }
+
+  .menu-bg {
+    position: absolute;
+    justify-content: flex-end;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+    .menu-ctx {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 900px;
+      width: 0;
+      height: 100%;
+      margin-left: 50px;
+      background-color: #fccd0f;
+      animation: slideOut 500ms;
+      animation-fill-mode: forwards;
+      overflow-y: auto;
+    }
+    @keyframes slideOut {
+      100% {
+        width: 100%;
+      }
+    }
+      .menu-routes {
+        position: relative;
+        max-width: 350px;
+        height: 600px;
+        width: 100%;
+      }
+        .menu-routes > a {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-decoration: none;
+          font-size: 2rem;
+          text-align: left;
+        }
+        .menu-routes > a:hover {
+          background-color: #23e8be;
+        }
+        .menu-routes > a:hover h4,
+        .menu-routes > a:hover h4 span {
+          color: #fff;
+        }
+          .menu-routes > a h4 {
+            margin: 15px 0;
+          }
+            .menu-routes > a h4 span {
+              display: block;
+              font-size: 1rem;
+            }
+      .menu-contact {
+        max-width: 200px;
+        width: 100%;
+        height: 600px;
+        margin-right: 180px;
+      }
+        .contact-i {
+          width: 100%;
+          text-align: left;
+          margin-bottom: 50px;
+        }
+          .contact-i > h4 {
+            margin: 15px 0;
+          }
+
+        .contact-qr {
+          display: flex;
+          flex-direction: row;
+        }
+          .icons-box {
+            align-items: flex-start;
+          }
+            .icon-img {
+              margin: 0 10px 20px 0;
+            }
+              .qr-ctx > h4 {
+                font-size: 0.75rem;
+                margin: 2px 0;
+              }
+
+/* @Media */
+@media (max-width: 1349px) {
+  .purple-bg {
+    background-color: #b046aa;
+  }
+  .yellow-bg {
+    background-color: #fccd0f;
+  }
+  .white-bg {
+    background-color: #fafafa;
+  }
+  .menu-bar {
+    height: 75px;
+  }
+  .menu-fixed {
+    height: 75px;
+    align-items: flex-start;
+  }
+  .full-height {
+    height: 100%;
+    background-color: unset;
+  }
+  .menu-home {
+    background: url('./assets/contactform/young_talent_logo_black.png') no-repeat center;
+    background-size: 100%;
+    width: 70px;
+    padding-bottom: 55px;
+    margin-top: 10px;
+  }
+  .menu-burger {
+    margin-top: 15px;
+  }
+}
+
+@media (max-width: 1050px) {
+  .menu-home {
+    margin-left: 25px;
+  }
+  .menu-burger {
+    margin-right: 25px;
+  }
+}
+
+@media (max-width: 750px) {
+  .menu-contact {
+    margin-right: 90px;
+  }
+}
+
+@media (max-width: 550px) {
+  .menu-ctx {
+    justify-content: center;
+  }
+    .menu-routes {
+      height: 450px;
+    }
+
+  .menu-home {
+    margin-top: 12.5px;
+    width: 50px;
+    padding-bottom: 45px
+  }
+  .menu-burger > img {
+    width: 25px;
+  }
 }
 </style>
