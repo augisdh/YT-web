@@ -123,6 +123,7 @@ body {
 .container {
   max-width: 1000px;
   width: 100%;
+  z-index: 1;
 }
 .margin-sides {
   margin: 0 25px;

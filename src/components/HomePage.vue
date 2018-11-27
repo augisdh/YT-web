@@ -1,6 +1,6 @@
 <template>
   <div class="main-wrapper">
-    <!-- <div class="intro-wrap d-flex-center">
+    <div class="intro-wrap d-flex-center">
       <div class="intro-ctx-wrap container margin-sides">
         <div class="intro-ctx-box">
           <div class="intro-content">
@@ -21,7 +21,7 @@
           </div>
         </div>
       </div>
-    </div> -->
+    </div>
     <navMenu></navMenu>
     <div class="disciplines-wrap d-flex-center">
       <div class="disciplines-grid container margin-sides shadow">
@@ -587,6 +587,9 @@ export default {
     this.changeIntroText()
   },
   methods: {
+    a () {
+      console.log('dfhsdfhsdf')
+    },
     changeIntroText () {
       this.$options.interval = setInterval(() => {
         const changingText = document.querySelector('.intro-content h3 span')

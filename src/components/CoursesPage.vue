@@ -343,6 +343,7 @@ export default {
   }
     .port-head-wrapper {
       position: relative;
+      z-index: 5;
     }
       .port-head-wrapper > img {
         display: block;
@@ -350,7 +351,6 @@ export default {
         position: absolute;
         bottom: -100px;
         right: 0;
-        z-index: 5;
       }
   .clear-head-bottom {
     width: 100%;
@@ -638,6 +638,12 @@ export default {
 }
 
 /* @Media */
+@media (max-width: 1349px) {
+  .courses-wrap {
+    padding-top: 75px;
+  }
+}
+
 @media (max-width: 800px) {
   .port-course-content-grid,
   .vip-prog-content-grid {
@@ -695,6 +701,9 @@ export default {
 }
 
 @media (max-width: 550px) {
+  .courses-wrap {
+    padding-top: 75px;
+  }
   .port-head-wrapper > img {
     bottom: -50px;
   }

@@ -235,6 +235,12 @@ export default {
 }
 
 /* @Media */
+@media (max-width: 1349px) {
+  .about-wrap {
+    padding-top: 75px;
+  }
+}
+
 @media (max-width: 1150px) {
   .about-head {
     flex-direction: column-reverse;

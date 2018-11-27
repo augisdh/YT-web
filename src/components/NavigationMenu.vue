@@ -1,7 +1,7 @@
 <template>
   <div>
-    <div class="menu-bar">
-      <div class="menu-fixed" :class="{'full-height': burgerActive === true}">
+    <div class="menu-bar" :class="{'purple-bg': menuColor === 'purple', 'yellow-bg': menuColor === 'yellow', 'white-bg': menuColor === 'white'}">
+      <div class="menu-fixed" :class="{'full-height menu-top': burgerActive === true, 'purple-bg': menuColor === 'purple', 'yellow-bg': menuColor === 'yellow', 'white-bg': menuColor === 'white'}">
         <div class="menu-home">
           <router-link to="/" data-color="purple"></router-link>
         </div>
@@ -43,12 +43,12 @@
                   <span>UNIVERSITIES</span>
                 </h4>
               </router-link>
-              <router-link to="/contact">
+              <div @click="openContactForm" class="contact-link">
                 <h4>
                   联系我们
                   <span>CONTACT US</span>
                 </h4>
-              </router-link>
+              </div>
             </div>
             <div v-if="mobileScreen !== true" class="menu-contact">
               <div class="contact-i">
@@ -105,27 +105,41 @@
         </div>
       </div>
     </div>
+    <contactUsForm v-if="contactActive === true" @close_form="closeContactForm"></contactUsForm>
   </div>
 </template>
 
 <script>
+import contactUsForm from './ContactUsForm'
+
 export default {
   name: 'NavigationMenu',
+  components: {
+    contactUsForm
+  },
   data () {
     return {
       mobileScreen: null,
-      burgerActive: null
+      burgerActive: null,
+      menuColor: '',
+      contactActive: false
     }
   },
   mounted () {
     this.$nextTick(function () {
       window.addEventListener('resize', this.checkScreen)
       this.checkScreen()
-      window.addEventListener('resize', this.routerActive)
       this.routerActive()
     })
   },
   methods: {
+    closeContactForm () {
+      this.contactActive = false
+    },
+    openContactForm () {
+      this.contactActive = true
+      this.burgerActive = false
+    },
     checkScreen () {
       (document.querySelector('.main-wrapper').getAttributeNode('mob-screen')) ? this.mobileScreen = true : this.mobileScreen = false
     },
@@ -133,21 +147,10 @@ export default {
       (this.burgerActive === null) ? this.burgerActive = true : this.burgerActive = !this.burgerActive
     },
     routerActive () {
-      const menuColor = document.querySelector('.is-active').dataset.color
+      this.menuColor = document.querySelector('.is-active').dataset.color
       if (document.querySelector('.is-active').href !== 'http://localhost:8080/') {
         document.querySelector('.is-active h4').classList.add('active-m')
         document.querySelector('.is-active h4 span').classList.add('active-m')
-      }
-
-      if (menuColor === 'purple') {
-        document.querySelector('.menu-bar').classList.add('purple-bg')
-        document.querySelector('.menu-fixed').classList.add('purple-bg')
-      } else if (menuColor === 'yellow') {
-        document.querySelector('.menu-bar').classList.add('yellow-bg')
-        document.querySelector('.menu-fixed').classList.add('yellow-bg')
-      } else {
-        document.querySelector('.menu-bar').classList.add('white-bg')
-        document.querySelector('.menu-fixed').classList.add('white-bg')
       }
     }
   },
@@ -171,8 +174,16 @@ export default {
 .active-m {
   color: #23e8be;
 }
+.menu-top {
+  z-index: 10;
+}
 
 .menu-bar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   width: 100%;
 }
   .menu-fixed {
@@ -183,7 +194,6 @@ export default {
     align-items: center;
     width: 100%;
     height: 100%;
-    z-index: 10;
   }
   .menu-home {
     position: relative;
@@ -204,6 +214,7 @@ export default {
   .menu-burger {
     margin-right: 70px;
     z-index: 15;
+    justify-self: flex-end;
   }
   .menu-burger > img {
     width: 40px;
@@ -214,8 +225,10 @@ export default {
   .menu-bg {
     position: absolute;
     justify-content: flex-end;
-    width: 100%;
-    height: 100%;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
     background-color: rgba(0, 0, 0, 0.3);
   }
     .menu-ctx {
@@ -243,7 +256,8 @@ export default {
         height: 600px;
         width: 100%;
       }
-        .menu-routes > a {
+        .menu-routes > a,
+        .menu-routes > .contact-link {
           display: flex;
           flex-direction: column;
           align-items: center;
@@ -251,17 +265,25 @@ export default {
           font-size: 2rem;
           text-align: left;
         }
-        .menu-routes > a:hover {
+        .menu-routes > .contact-link {
+          cursor: pointer;
+        }
+        .menu-routes > a:hover,
+        .menu-routes > .contact-link:hover {
           background-color: #23e8be;
         }
         .menu-routes > a:hover h4,
-        .menu-routes > a:hover h4 span {
+        .menu-routes > a:hover h4 span,
+        .menu-routes > .contact-link:hover h4,
+        .menu-routes > .contact-link:hover h4 span, {
           color: #fff;
         }
-          .menu-routes > a h4 {
+          .menu-routes > a h4,
+          .menu-routes > .contact-link h4 {
             margin: 15px 0;
           }
-            .menu-routes > a h4 span {
+            .menu-routes > a h4 span,
+            .menu-routes > .contact-link h4 span {
               display: block;
               font-size: 1rem;
             }
@@ -312,13 +334,14 @@ export default {
   .menu-fixed {
     height: 75px;
     align-items: flex-start;
+    z-index: 10;
   }
   .full-height {
     height: 100%;
     background-color: unset;
   }
   .menu-home {
-    background: url('./assets/contactform/young_talent_logo_black.png') no-repeat center;
+    background: url('./assets/contactform/young_talent_black_logo_navigation_horizontal.png') no-repeat center;
     background-size: 100%;
     width: 70px;
     padding-bottom: 55px;
@@ -353,9 +376,12 @@ export default {
     }
 
   .menu-home {
-    margin-top: 12.5px;
+    margin-top: 15px;
     width: 50px;
     padding-bottom: 45px
+  }
+  .menu-burger {
+    margin-top: 25px;
   }
   .menu-burger > img {
     width: 25px;

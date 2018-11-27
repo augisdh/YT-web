@@ -649,6 +649,12 @@ export default {
 }
 
 /* @Media */
+@media (max-width: 1349px) {
+  .staff-wrap {
+    padding-top: 75px;
+  }
+}
+
 @media (max-width: 1149px) {
   .acad-staff-box {
     top: -275px;
@@ -662,6 +668,9 @@ export default {
 }
 
 @media (max-width: 550px) {
+  .staff-wrap {
+    padding-top: 75px;
+  }
   .acad-staff-wrap {
     margin-bottom: 25px;
   }

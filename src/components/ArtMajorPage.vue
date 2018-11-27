@@ -475,6 +475,12 @@ export default {
   background-color: #ae4ea9;
 }
 /* @Media */
+@media (max-width: 1349px) {
+  .disc-wrap {
+    padding-top: 75px;
+  }
+}
+
 @media (max-width: 1049px) {
   .expl-sub-box {
     top: -125px;
@@ -498,6 +504,9 @@ export default {
 }
 
 @media (max-width: 550px) {
+  .disc-wrap {
+    padding-top: 75px;
+  }
   .expl-sub-wrap {
     margin-bottom: 25px;
   }

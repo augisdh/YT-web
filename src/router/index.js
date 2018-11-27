@@ -6,7 +6,6 @@ import CoursesPage from '@/components/CoursesPage'
 import StaffPage from '@/components/StaffPage'
 import ArtMajorPage from '@/components/ArtMajorPage'
 import UniversitiesPage from '@/components/UniversitiesPage'
-import ContactUsForm from '@/components/ContactUsForm'
 
 Vue.use(Router)
 
@@ -45,11 +44,6 @@ export default new Router({
       path: '/universities',
       name: 'UniversitiesPage',
       component: UniversitiesPage
-    },
-    {
-      path: '/contact',
-      name: 'ContactUsForm',
-      component: ContactUsForm
     }
   ],
   mode: 'history'
