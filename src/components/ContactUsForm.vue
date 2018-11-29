@@ -1,5 +1,5 @@
 <template>
-  <div class="contact-wrap">
+  <div class="contact-wrap l-spacing-sm">
     <div class="contact-form-box margin-sides">
       <form class="form" novalidate>
         <div class="form-header">
@@ -11,26 +11,43 @@
           </div>
           <div class="form-header-c-box">
             <div class="purple-line"></div>
-            <div class="form-header-c-ctx">
+            <div v-if="sendSuccess === false" class="form-header-c-ctx">
               <h6>info@youngtalent.cn</h6>
               <h6>400-961-1108</h6>
             </div>
           </div>
         </div>
-        <div class="form-inputs">
-          <input type="text" name="name" placeholder="姓名" required>
-          <input type="number" name="number" placeholder="电话" required>
-          <input type="?" name="?" placeholder="微信号" required>
-          <input type="email" name="email" placeholder="邮箱" required>
-          <input type="text" name="msg" placeholder="信息" required>
+        <div v-if="sendSuccess === false" class="form-inputs">
+          <input class="inputName" :class="{'in-valid': validName === false}" type="text" name="name" placeholder="姓名" required>
+          <input class="inputNumber" :class="{'in-valid': validNumber === false}" type="number" name="number" placeholder="电话" required>
+          <input class="inputWechat" :class="{'in-valid': validWechat === false}" type="text" name="wechat" placeholder="微信号" required>
+          <input class="inputEmail" :class="{'in-valid': validEmail === false}" type="email" name="email" placeholder="邮箱" required>
+          <input class="inputMsg" :class="{'in-valid': validMsg === false}" type="text" name="msg" placeholder="信息" required>
           <p class="p-text">
             * 专业老师会尽快与你取得联系。您也可以通过网站上提供的地址、
             电话或邮箱直接联系我们
           </p>
         </div>
-        <div class="form-btns">
-          <button class="send-btn" type="button">提交信息</button>
+        <div v-if="sendSuccess === false" class="form-btns">
+          <button @click="sendMessage" class="send-btn" type="button">提交信息</button>
           <button @click="closeForm" class="close-btn" type="button">关闭窗口</button>
+        </div>
+        <div v-if="sendSuccess === true" class="form-msg">
+          <p class="p-text">
+            您的预约申请已提交成功。<br>
+            我们的专业老师会尽快与您取得联系。<br>
+            谢谢！
+          </p>
+          <p class="p-text">
+            Your message has been sent.<br>
+            Our team will get back to you as soon as possible. Thank you!
+          </p>
+        </div>
+        <div v-if="sendSuccess === true" class="logo-box">
+          <div class="yellow-line"></div>
+          <div class="yg-img">
+            <img src="./assets/contactform/young_talent_logo_black.png" alt="">
+          </div>
         </div>
       </form>
     </div>
@@ -40,9 +57,48 @@
 <script>
 export default {
   name: 'ContactUsForm',
+  data () {
+    return {
+      sendSuccess: false,
+      validNumber: null,
+      validEmail: null,
+      validName: null,
+      validWechat: null,
+      validMsg: null,
+      contactFormValid: false
+    }
+  },
   methods: {
     closeForm () {
       this.$emit('close_form')
+    },
+    checkRegexValidation () {
+      const checkEmail = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/g
+      const checkNumber = /^\+?-?\d+$/g
+      const formNumber = document.querySelector('.inputNumber').value
+      const formEmail = document.querySelector('.inputEmail').value
+      const isValidNumber = formNumber.match(checkNumber)
+      const isValidEmail = formEmail.match(checkEmail);
+
+      (isValidNumber) ? this.validNumber = true : this.validNumber = false;
+      (isValidEmail) ? this.validEmail = true : this.validEmail = false
+    },
+    checkOtherValidation () {
+      (document.querySelector('.inputName').value !== '') ? this.validName = true : this.validName = false;
+      (document.querySelector('.inputWechat').value !== '') ? this.validWechat = true : this.validWechat = false;
+      (document.querySelector('.inputMsg').value !== '') ? this.validMsg = true : this.validMsg = false
+    },
+    sendMessage () {
+      this.checkRegexValidation()
+      this.checkOtherValidation();
+      (this.validName === true && this.validNumber === true && this.validWechat === true && this.validEmail === true && this.validMsg === true) ? this.contactFormValid = true : this.contactFormValid = false
+
+      if (this.contactFormValid === true) {
+        this.sendSuccess = true
+        setTimeout(() => {
+          this.closeForm()
+        }, 3000)
+      }
     }
   }
 }
@@ -112,6 +168,7 @@ export default {
         height: 25px;
         margin-bottom: 25px;
         padding-left: 10px;
+        border: 1px solid #ebe6e6;
       }
       .form-inputs > input:nth-child(5) {
         padding-bottom: 25px;
@@ -146,12 +203,38 @@ export default {
         margin-left: 10px;
       }
 
+    .form-msg {
+      text-align: left;
+      margin-bottom: 100px;
+    }
+
+    .logo-box {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-end;
+      justify-content: space-between;
+    }
+      .yg-img > img {
+        display: block;
+        width: 100px;
+      }
+
 /* Lines */
 .purple-line {
   width: 50px;
   height: 5px;
   background-color: #b046aa;
   align-self: flex-end;
+}
+.yellow-line {
+  max-width: 200px;
+  width: 100%;
+  height: 5px;
+  background-color: #fccd0f;
+  margin-right: 25px;
+}
+.form-inputs > .in-valid {
+  border-color: red;
 }
 
 /* @Media */
@@ -162,6 +245,10 @@ export default {
   .form-header,
   .form-inputs {
     margin-bottom: 25px;
+  }
+  .form-msg {
+    text-align: left;
+    margin-bottom: 50px;
   }
 }
 </style>

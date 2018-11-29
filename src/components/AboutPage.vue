@@ -1,6 +1,6 @@
 <template>
   <div class="main-wrapper">
-    <div class="about-wrap">
+    <div class="about-wrap l-spacing-sm">
       <navMenu></navMenu>
       <div class="about-head">
         <div class="about-head-img">
@@ -164,7 +164,7 @@ export default {
     .about-us-ctx > h4,
     .about-content-card > h4 {
       margin: 0 0 50px 0;
-      font-size: 2rem;
+      font-size: 2.25rem;
     }
       .about-us-ctx > h4 span,
       .about-content-card > h4 span {

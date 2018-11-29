@@ -1,5 +1,5 @@
 <template>
-  <div class="main-wrapper">
+  <div class="main-wrapper l-spacing-sm">
     <div class="intro-wrap d-flex-center">
       <div class="intro-ctx-wrap container margin-sides">
         <div class="intro-ctx-box">
@@ -22,7 +22,7 @@
         </div>
       </div>
     </div>
-    <navMenu></navMenu>
+    <navMenu v-if="menuAppear === true"></navMenu>
     <div class="disciplines-wrap d-flex-center">
       <div class="disciplines-grid container margin-sides shadow">
         <div class="industrial-d">
@@ -501,15 +501,22 @@
     <div id="modal-box" class="modal" @click="closeModalBox" :class="{'display-f': modalBoxActive === true, 'display-n': modalBoxActive !== true}">
       <span class="close" @click="modalBoxActive = !modalBoxActive">&times;</span>
       <div class="modal-img-box margin-sides">
-        <img class="modal-img" :src="enlargeImg" alt="">
-        <div
-          @click="sliderModalImg"
-          data-direction="prev"
-          class="arrow-modal"></div>
-        <div
-          @click="sliderModalImg"
-          data-direction="next"
-          class="arrow-modal"></div>
+        <div class="div">
+          <img class="modal-img" :src="enlargeImg" alt="">
+          <p class="p-text">
+            {{ selectedText }}
+          </p>
+          <div
+            @click="sliderModalImg"
+            data-direction="prev"
+            class="arrow-modal">
+          </div>
+          <div
+            @click="sliderModalImg"
+            data-direction="next"
+            class="arrow-modal">
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -551,44 +558,61 @@ export default {
       enlargeImg: String,
       selectedStudent: null,
       selectedImg: '',
+      selectedText: '',
       enlargeImgObj: [
         {
           portfolio: 'static/enlarge/underg/undergraduate_portfolio_large1.jpg',
-          offer: 'static/enlarge/underg/undergraduate_offer_large1.jpg'
+          offer: 'static/enlarge/underg/undergraduate_offer_large1.jpg',
+          txt: '王同学, 电影电视 / 视觉传达, 香港演艺学院, 伦敦艺术大学, 爱丁堡大学, 等6所大学'
         },
         {
           portfolio: 'static/enlarge/underg/undergraduate_portfolio_large2.jpg',
-          offer: 'static/enlarge/underg/undergraduate_offer_large2.jpg'
+          offer: 'static/enlarge/underg/undergraduate_offer_large2.jpg',
+          txt: '叶同学, 纯艺术, 马里兰艺术学院, 普瑞特艺术学院, 纽约视觉艺术学院, 等5所大学'
         },
         {
           portfolio: 'static/enlarge/underg/undergraduate_portfolio_large3.jpg',
-          offer: 'static/enlarge/underg/undergraduate_offer_large3.jpg'
+          offer: 'static/enlarge/underg/undergraduate_offer_large3.jpg',
+          txt: '林同学, 摄影, 伦敦艺术大学, 布莱顿大学, 圣安德鲁斯剑桥学院'
         },
         {
           portfolio: 'static/enlarge/postg/postgraduate_portfolio_large1.jpg',
-          offer: 'static/enlarge/postg/postgraduate_offer_large1.jpg'
+          offer: 'static/enlarge/postg/postgraduate_offer_large1.jpg',
+          txt: '朱同学, 工业设计, 中央圣马丁艺术与设计学院'
         },
         {
           portfolio: 'static/enlarge/postg/postgraduate_portfolio_large2.jpg',
-          offer: 'static/enlarge/postg/postgraduate_offer_large2.jpg'
+          offer: 'static/enlarge/postg/postgraduate_offer_large2.jpg',
+          txt: '李同学, 视觉传达, 德国魏玛包豪斯大学'
         },
         {
           portfolio: 'static/enlarge/postg/postgraduate_portfolio_large3.jpg',
-          offer: 'static/enlarge/postg/postgraduate_offer_large3.jpg'
+          offer: 'static/enlarge/postg/postgraduate_offer_large3.jpg',
+          txt: '张同学, 交互设计, 伦敦艺术大学, 拉夫堡大学'
         }
-      ]
+      ],
+      menuAppear: false
     }
   },
   mounted () {
     this.$nextTick(function () {
       window.addEventListener('resize', this.checkScreen)
       this.checkScreen()
+      window.addEventListener('scroll', this.navMenuAppear)
+      window.addEventListener('resize', this.navMenuAppear)
+      this.navMenuAppear()
     })
     this.changeIntroText()
   },
   methods: {
-    a () {
-      console.log('dfhsdfhsdf')
+    navMenuAppear () {
+      const screenHeight = document.documentElement.clientHeight
+      const scrollTop = document.documentElement.scrollTop
+      if (screenHeight <= scrollTop) {
+        this.menuAppear = true
+      } else {
+        this.menuAppear = false
+      }
     },
     changeIntroText () {
       this.$options.interval = setInterval(() => {
@@ -618,6 +642,7 @@ export default {
       this.selectedStudent = Number(event.target.dataset.enlarge)
       this.selectedImg = event.target.dataset.current
       this.enlargeImg = this.enlargeImgObj[this.selectedStudent][this.selectedImg]
+      this.selectedText = this.enlargeImgObj[this.selectedStudent].txt
       this.modalBoxActive = true
     },
     closeModalBox (event) {
@@ -666,6 +691,8 @@ export default {
   },
   beforeDestroy () {
     window.removeEventListener('resize', this.checkScreen)
+    window.removeEventListener('scroll', this.navMenuAppear)
+    window.removeEventListener('resize', this.navMenuAppear)
     clearInterval(this.$options.interval)
   }
 }
@@ -777,6 +804,7 @@ export default {
     width: 22px;
     height: 22px;
     background: url(./assets/contactform/arrow-corner.png) no-repeat center;
+    background-size: 100%;
   }
     .disciplines-grid > div img {
       width: 100%;
@@ -784,23 +812,26 @@ export default {
     }
     .sub-ctx {
       position: absolute;
-      top: 25px;
-      left: 25px;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
       text-align: left;
     }
       .sub-ctx > h3,
       .sub-ctx > h5 {
-        margin: 0;
+        margin: 0 25px;
       }
       .sub-ctx > h3 {
+        margin-top: 25px;
         font-size: 18px;
       }
       .sub-ctx > h5 {
         font-size: 14px;
       }
 
-  .disciplines-grid > div:hover {
-    opacity: 0.95;
+  .disciplines-grid > div .sub-ctx:hover {
+    background-color: rgba(255, 255, 255, 0.5);
     cursor: pointer;
   }
   .disciplines-grid > div:hover:after {
@@ -901,7 +932,7 @@ export default {
       display: inline-block;
       color: #fccd0f;
       margin: 0 30px 0 0;
-      font-size: 2rem;
+      font-size: 2.25rem;
     }
 
   .d-flex-staff {
@@ -946,12 +977,13 @@ export default {
     }
       .content-heading-box h4 {
         font-size: 1rem;
+        line-height: 1.7rem;
         margin: 25px 0 25px 0;
       }
         .content-heading-box h4 span {
           display: block;
           width: 100%;
-          font-size: 2rem;
+          font-size: 2.25rem;
         }
 
     .univer-img-box {
@@ -1004,6 +1036,7 @@ export default {
         margin: 0 25px;
         max-width: 150px;
         text-align: left;
+        align-self: center;
       }
         .student-p span {
           display: block;
@@ -1068,12 +1101,14 @@ export default {
   justify-content: center;
   align-items: center;
   position: fixed;
-  z-index: 1;
+  z-index: 20;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.4);
+  overflow-x: hidden;
+  overflow-y: auto;
 }
   .modal-img-box {
     position: relative;
@@ -1081,6 +1116,10 @@ export default {
     justify-content: center;
     align-items: center;
   }
+    .modal-img-box .p-text {
+      color: #fff;
+      font-weight: 500;
+    }
     .modal-img-box .arrow-modal {
       content: '';
       position: absolute;
@@ -1091,13 +1130,13 @@ export default {
       opacity: .5;
       cursor: pointer;
     }
-    .modal-img-box .arrow-modal:nth-child(2) {
-      left: 25px;
+    .modal-img-box .arrow-modal:nth-child(3) {
+      left: 10px;
       transform: rotate(180deg);
       transform-origin: center center;
     }
     .modal-img-box .arrow-modal:last-child {
-      right: 25px;
+      right: 10px;
     }
     .modal-img-box .arrow-modal:hover {
       opacity: 1;
@@ -1105,27 +1144,29 @@ export default {
 
     .modal-img {
       display: block;
+      position: relative;
+      outline: none;
       width: 100%;
-      animation: scaleUp 500ms;
-      transform: scale(0);
+      animation: slideOne 500ms;
+      transform: translateX(100%);
       animation-fill-mode: forwards;
     }
-    @keyframes scaleUp {
+    @keyframes slideOne {
       100% {
-        transform: scale(1);
+        transform: translateX(0);
       }
     }
 
     .modal-img-second {
       display: block;
       width: 100%;
-      animation: scaleUpp 500ms;
-      transform: scale(0);
+      animation: slideTwo 500ms;
+      transform: translateX(100%);
       animation-fill-mode: forwards;
     }
-    @keyframes scaleUpp {
+    @keyframes slideTwo {
       100% {
-        transform: scale(1);
+        transform: translateX(0);
       }
     }
 
@@ -1160,6 +1201,19 @@ export default {
     top: 167px;
     right: 50%;
     transform: translateX(18px)
+  }
+}
+
+@media (max-height: 700px) {
+  .modal-img-box {
+    position: absolute;
+    top: 30%;
+    left: 10px;
+    right: 10px;
+    margin-bottom: 50px;
+  }
+  .modal-img-box .arrow-modal {
+    top: 40%;
   }
 }
 
@@ -1218,9 +1272,12 @@ export default {
       right: 10px;
       bottom: 10px;
     }
-    .sub-ctx {
-      top: 10px;
-      left: 10px;
+    .sub-ctx > h3 {
+      margin-top: 10px;
+    }
+    .sub-ctx > h3,
+    .sub-ctx > h5 {
+      margin-left: 10px;
     }
 
   .arts {

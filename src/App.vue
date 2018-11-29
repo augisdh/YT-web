@@ -3,7 +3,7 @@
     <router-view v-if="mobileScreen === true" v-bind:mob-screen="true"></router-view>
     <router-view v-if="mobileScreen === false"></router-view>
     <footer>
-      <div v-if="mobileScreen === true" class="footer-mobile margin-sides">
+      <div v-if="mobileScreen === true" class="footer-mobile margin-sides l-spacing-sm">
         <div class="f-mobile-content-i">
           <h4>
             联系邮箱
@@ -55,7 +55,7 @@
         </div>
       </div>
       <div class="margin-sides">
-        <p class="footer-ctx">沪ICP备18024906号-1 Copyright © 2018 上海洋檀棱桃文化传播有限公司</p>
+        <p class="footer-ctx l-spacing-sm">沪ICP备18024906号-1 Copyright © 2018 上海洋檀棱桃文化传播有限公司</p>
       </div>
     </footer>
   </div>
@@ -77,16 +77,24 @@ export default {
       window.addEventListener('resize', this.getWindowWidth)
       this.getWindowWidth()
     })
+    this.msieversion()
   },
   methods: {
     getWindowWidth () {
       const windowWidth = document.documentElement.clientWidth;
       (windowWidth <= 550) ? this.mobileScreen = true : this.mobileScreen = false
+    },
+    msieversion () {
+      const ua = window.navigator.userAgent
+      const msie = ua.indexOf('MSIE')
+      if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv:11./)) {
+        alert('Internet explorer is not supported. Update browser version.')
+      }
+      return false
     }
   }
 }
 </script>
-
 <style>
 body {
   margin: 0;
@@ -129,14 +137,17 @@ body {
   margin: 0 25px;
 }
 .shadow {
-  box-shadow: 25px 25px 25px rgba(0, 0, 0, 0.1);
+  box-shadow: 25px 15px 30px rgba(0, 0, 0, .05);
 }
 .p-text {
   font-size: 1rem;
-  line-height: 1.5rem
+  line-height: 1.2rem
 }
 .mb-0 {
   margin-bottom: 0  !important;
+}
+.l-spacing-sm {
+  letter-spacing: .5px;
 }
 /**/
 
@@ -228,38 +239,48 @@ footer {
         }
       /* Icons backgrounds, :hover */
       .weibo {
-        background: url("assets/navmenu/socialicons/weibo-icon-black.png") no-repeat;
+        background: url("assets/navmenu/socialicons/weibo-icon-black.png") no-repeat center;
+        background-size: 100%;
       }
       .weibo:hover {
-        background: url("assets/navmenu/socialicons/weibo-icon-green.png") no-repeat;
+        background: url("assets/navmenu/socialicons/weibo-icon-green.png") no-repeat center;
+        background-size: 100%;
       }
 
       .insta {
-        background: url("assets/navmenu/socialicons/insta-icon-black.png") no-repeat;
+        background: url("assets/navmenu/socialicons/insta-icon-black.png") no-repeat center;
+        background-size: 100%;
       }
       .insta:hover {
-        background: url("assets/navmenu/socialicons/insta-icon-green.png") no-repeat;
+        background: url("assets/navmenu/socialicons/insta-icon-green.png") no-repeat center;
+        background-size: 100%;
       }
 
       .douban {
-        background: url("assets/navmenu/socialicons/Douban-icon-black.png") no-repeat;
+        background: url("assets/navmenu/socialicons/Douban-icon-black.png") no-repeat center;
+        background-size: 100%;
       }
       .douban:hover {
-        background: url("assets/navmenu/socialicons/Douban-icon-green.png") no-repeat;
+        background: url("assets/navmenu/socialicons/Douban-icon-green.png") no-repeat center;
+        background-size: 100%;
       }
 
       .zhihu {
-        background: url("assets/navmenu/socialicons/zhihu-icon-black.png") no-repeat;
+        background: url("assets/navmenu/socialicons/zhihu-icon-black.png") no-repeat center;
+        background-size: 100%;
       }
       .zhihu:hover {
-        background: url("assets/navmenu/socialicons/zhihu-icon-green.png") no-repeat;
+        background: url("assets/navmenu/socialicons/zhihu-icon-green.png") no-repeat center;
+        background-size: 100%;
       }
 
       .qq {
-        background: url("assets/navmenu/socialicons/QQ-icon_black.png") no-repeat;
+        background: url("assets/navmenu/socialicons/QQ-icon_black.png") no-repeat center;
+        background-size: 100%;
       }
       .qq:hover {
-        background: url("assets/navmenu/socialicons/QQ-icon-green.png") no-repeat;
+        background: url("assets/navmenu/socialicons/QQ-icon-green.png") no-repeat center;
+        background-size: 100%;
       }
         .qq::after,
         .wechat::after {
@@ -289,10 +310,12 @@ footer {
         }
 
       .wechat {
-        background: url("assets/navmenu/socialicons/wechat-icon-black.png") no-repeat;
+        background: url("assets/navmenu/socialicons/wechat-icon-black.png") no-repeat center;
+        background-size: 100%;
       }
       .wechat:hover {
-        background: url("assets/navmenu/socialicons/wechat-icon-green.png") no-repeat;
+        background: url("assets/navmenu/socialicons/wechat-icon-green.png") no-repeat center;
+        background-size: 100%;
       }
 
 @media (max-width: 550px){
@@ -300,7 +323,7 @@ footer {
     font-size: 12px;
   }
   .shadow {
-    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.05);
   }
 }
 

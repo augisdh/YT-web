@@ -1,6 +1,6 @@
 <template>
   <div class="main-wrapper">
-    <div class="staff-wrap">
+    <div class="staff-wrap l-spacing-sm">
       <navMenu></navMenu>
       <div class="staff-head">
         <img v-if="mobileScreen === false" src="./assets/staffpage/staff_background.jpg" alt="">
@@ -566,7 +566,8 @@ export default {
       }
         .acad-staff-content > h4 {
           margin: 0 0 50px 0;
-          font-size: 2rem;
+          font-size: 2.25rem;
+          line-height: 1.7rem;
         }
           .acad-staff-content > h4 span {
             display: block;

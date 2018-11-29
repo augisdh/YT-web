@@ -1,6 +1,6 @@
 <template>
   <div class="main-wrapper">
-    <div class="disc-wrap">
+    <div class="disc-wrap l-spacing-sm">
       <navMenu></navMenu>
       <div class="disc-head">
         <img v-if="mobileScreen === false" src="./assets/disciplinespage/pattern_bg.jpg" alt="">
@@ -43,7 +43,7 @@
                       专业介绍
                       <span>INTRODUCTION</span>
                     </h5>
-                    <p class="p-text">
+                    <p class="p-text h-96">
                       平面设计，是以视觉意象作为沟通和表现的方式，加以文字、 透过多种方式来结合符号、图片，
                       借此作出用来传达想法或讯息的视觉表现。在精神文化领域以其独特的艺术魅力影响着人们的日常生活。
                     </p>
@@ -64,11 +64,11 @@
             <div class="disc-sub-box shadow">
               <div class="sub-content">
                 <div class="sub-head">
-                  <img src="./assets/disciplinespage/industrial-design.png" alt="">
+                  <img class="w-85" src="./assets/disciplinespage/industrial-design.png" alt="">
                   <div class="sub-head-text">
                     <h4>
-                      平麵设计
-                      <span>GRAPHIC DESIGN</span>
+                      工业设计
+                      <span class="green">INDUSTRIAL DESIGN</span>
                     </h4>
                   </div>
                 </div>
@@ -78,7 +78,7 @@
                       专业介绍
                       <span>INTRODUCTION</span>
                     </h5>
-                    <p class="p-text">
+                    <p class="p-text h-96">
                       工业设计是指以工学、美学、经济学为基础的，对工业产品进行设计的学科。工业发展和劳动分工所带来的工业设计，
                       与其他艺术、生产活动、工艺制作等都有明显不同，它是各种学科、技术和审美观念的交叉产物。
                     </p>
@@ -102,8 +102,8 @@
                   <img src="./assets/disciplinespage/jewellery_design.png" alt="">
                   <div class="sub-head-text">
                     <h4>
-                      平麵设计
-                      <span>GRAPHIC DESIGN</span>
+                      珠宝设计
+                      <span class="purple">JEWELLERY DESIGN</span>
                     </h4>
                   </div>
                 </div>
@@ -113,7 +113,7 @@
                       专业介绍
                       <span>INTRODUCTION</span>
                     </h5>
-                    <p class="p-text">
+                    <p class="p-text h-96">
                       珠宝设计主要是培养学生通过加工宝石、其他石材和贵金属艺术作品，从创造性和技术性上去表达情感、思想或内在愿景。
                       包括宝石学、金属着色、上釉、光蚀刻、宝石技巧和艺术、设计理念和个人风格发展。
                     </p>
@@ -138,8 +138,8 @@
                   <img src="./assets/disciplinespage/interaction_design.png" alt="">
                   <div class="sub-head-text">
                     <h4>
-                      平麵设计
-                      <span>GRAPHIC DESIGN</span>
+                      交互设计
+                      <span>INTERACTION DESIGN</span>
                     </h4>
                   </div>
                 </div>
@@ -174,8 +174,8 @@
                   <img src="./assets/disciplinespage/photography.png" alt="">
                   <div class="sub-head-text">
                     <h4>
-                      平麵设计
-                      <span>GRAPHIC DESIGN</span>
+                      摄影
+                      <span class="green">PHOTOGRAPHY</span>
                     </h4>
                   </div>
                 </div>
@@ -209,8 +209,8 @@
                   <img src="./assets/disciplinespage/film.png" alt="">
                   <div class="sub-head-text">
                     <h4>
-                      平麵设计
-                      <span>GRAPHIC DESIGN</span>
+                      影视制作
+                      <span class="purple">FILM</span>
                     </h4>
                   </div>
                 </div>
@@ -244,8 +244,8 @@
                   <img src="./assets/disciplinespage/visual_communication.png" alt="">
                   <div class="sub-head-text">
                     <h4>
-                      平麵设计
-                      <span>GRAPHIC DESIGN</span>
+                      视觉传达
+                      <span>VISUAL COMMUNICATION</span>
                     </h4>
                   </div>
                 </div>
@@ -255,7 +255,7 @@
                       专业介绍
                       <span>INTRODUCTION</span>
                     </h5>
-                    <p class="p-text h-96">
+                    <p class="p-text">
                       以“视觉”作为沟通和表现的方式。透过多种多样的方式来创造和结合符号、图片和文字，借此作出用来传达想法或讯息的视觉表现。
                     </p>
                   </div>
@@ -278,8 +278,8 @@
                   <img src="./assets/disciplinespage/animation.png" alt="">
                   <div class="sub-head-text">
                     <h4>
-                      平麵设计
-                      <span>GRAPHIC DESIGN</span>
+                      动画
+                      <span class="green">ANIMATION</span>
                     </h4>
                   </div>
                 </div>
@@ -380,7 +380,8 @@ export default {
       }
         .expl-sub-content > h4 {
           margin: 0 0 50px 0;
-          font-size: 2rem;
+          font-size: 2.25rem;
+          line-height: 1.7rem;
         }
           .expl-sub-content > h4 span {
             display: block;
@@ -425,6 +426,9 @@ export default {
         display: block;
         width: 100px;
       }
+      .sub-head > .w-85 {
+        width: 85px;
+      }
       .sub-head-text {
         margin-left: 50px;
         display: flex;
@@ -433,6 +437,7 @@ export default {
       }
         .sub-head-text > h4 {
           font-size: 36px;
+          line-height: 1.7rem;
           margin: 0;
         }
           .sub-head-text > h4 span {
@@ -473,6 +478,12 @@ export default {
   float: right;
   margin: 0 50px 45px 0;
   background-color: #ae4ea9;
+}
+.sub-head-text > h4 .green {
+  color: #40ebc7;
+}
+.sub-head-text > h4 .purple {
+  color: #ae4ea9;
 }
 /* @Media */
 @media (max-width: 1349px) {

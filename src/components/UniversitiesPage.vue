@@ -1,6 +1,6 @@
 <template>
   <div class="main-wrapper">
-    <div class="uni-wrap">
+    <div class="uni-wrap l-spacing-sm">
       <navMenu></navMenu>
       <div class="uni-head">
         <div class="uni-head-img">
@@ -473,7 +473,7 @@
               </div>
               <div class="uni-box">
                 <div class="uni-img-box">
-                  <a href="https://www.florenceacademyofart.com" target="_blank"><img src="./assets/universitiespage/others/E3-8.png" alt=""></a>
+                  <a href="http://www.accademia.firenze.it/en" target="_blank"><img src="./assets/universitiespage/others/E3-8.png" alt=""></a>
                 </div>
                 <div class="uni-ctx">
                   <h5>
@@ -586,7 +586,7 @@ export default {
       }
         .rec-institutions-content > h4 {
           margin: 0 0 50px 0;
-          font-size: 2rem;
+          font-size: 2.25rem;
         }
           .rec-institutions-content > h4 span {
             display: block;
@@ -654,11 +654,12 @@ export default {
         }
           .uni-ctx > h5 {
             margin: 0;
-            font-size: 1rem;
+            font-size: 1.2rem;
+            line-height: 1rem;
           }
             .uni-ctx > h5 span {
               display: block;
-              font-size: 1rem;
+              font-size: 1.2rem;
               margin-top: 6px;
             }
           .uni-ctx .p-text {

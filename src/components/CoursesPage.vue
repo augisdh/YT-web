@@ -1,6 +1,6 @@
 <template>
   <div class="main-wrapper">
-    <div class="courses-wrap">
+    <div class="courses-wrap l-spacing-sm">
       <navMenu></navMenu>
       <div class="courses-head">
         <div class="courses-head-img d-flex-center">
@@ -379,7 +379,8 @@ export default {
       .b-course-head > h4,
       .work-course-head > h4 {
         margin: 0 0 50px 0;
-        font-size: 2rem;
+        font-size: 2.25rem;
+        line-height: 1.7rem;
       }
         .w-port-content > h4 span,
         .port-course-head > h4 span,
@@ -550,8 +551,8 @@ export default {
   }
     .work-gallery {
       display: flex;
-      flex-direction: row;
       flex: 100;
+      flex-direction: row;
       min-width: 250.1px;
     }
       .w-img {
@@ -644,59 +645,87 @@ export default {
   }
 }
 
+@media (max-width: 999px){
+  .work-course-content-wrap {
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 50px;
+  }
+  .w-course-content-box:first-child {
+    margin-right: 0;
+  }
+}
+
 @media (max-width: 800px) {
   .port-course-content-grid,
   .vip-prog-content-grid {
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(4, auto);
+    max-width: 500px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+  }
+
+  .port-course-content-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(5, auto);
+  }
+  .vip-prog-content-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(5, auto);
   }
   /* Grid course position */
-  .course-three {
+  .course-two {
     grid-column: 1;
+    grid-row: 2;
+  }
+  .course-three {
+    grid-column: 2;
     grid-row: 2;
   }
   .course-four {
-    grid-column: 2;
-    grid-row: 2/4;
+    grid-column: 1;
+    grid-row: 3/5;
   }
   .course-five {
-    grid-column: 3;
-    grid-row: 2;
+    grid-column: 2;
+    grid-row: 3;
   }
   .course-six {
-    grid-column: 1;
-    grid-row: 3;
-  }
-  .course-seven {
-    grid-column: 3;
-    grid-row: 3;
-  }
-  .course-eight {
     grid-column: 2;
     grid-row: 4;
   }
+  .course-seven {
+    grid-column: 1;
+    grid-row: 5;
+  }
+  .course-eight {
+    grid-column: 2;
+    grid-row: 5;
+  }
   /* VIP programme */
-  .prog-four {
-    grid-column: 2/4;
+  .prog-seven {
+    grid-column: 2;
+    grid-row: 4;
+  }
+  .prog-three {
+    grid-column: 2;
     grid-row: 2;
+  }
+  .prog-four {
+    grid-column: 1/3;
+    grid-row: 4;
   }
   .prog-five {
     grid-column: 1/3;
     grid-row: 3;
   }
   .prog-six {
-    grid-column: 3;
-    grid-row: 3;
+    grid-column: 1;
+    grid-row: 5;
   }
   .prog-seven {
     grid-column: 2;
-    grid-row: 4;
-  }
-}
-
-@media (max-width: 575px){
-  .w-course-content-box:first-child {
-    margin-right: 0;
+    grid-row: 5;
   }
 }
 
@@ -735,52 +764,14 @@ export default {
   .port-course-head {
     margin-bottom: 25px;
   }
-
-  .port-course-content-grid {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(5, auto);
-    margin-bottom: 50px;
-  }
-  /* Grid course position */
-  .course-two {
-    grid-column: 1;
-    grid-row: 2;
-  }
-  .course-three {
-    grid-column: 2;
-    grid-row: 2;
-  }
-  .course-four {
-    grid-column: 1;
-    grid-row: 3/5;
-  }
-  .course-five {
-    grid-column: 2;
-    grid-row: 3;
-  }
-  .course-six {
-    grid-column: 2;
-    grid-row: 4;
-  }
-  .course-seven {
-    grid-column: 1;
-    grid-row: 5;
-  }
-  .course-eight {
-    grid-column: 2;
-    grid-row: 5;
+  .vip-prog-content-grid {
+    grid-template-rows: repeat(4, auto);
   }
     .port-course-content-grid .sub-ctx,
     .vip-prog-content-grid .sub-ctx {
       top: 10px;
       left: 10px;
     }
-
-  .vip-prog-content-grid {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(4, auto);
-    margin-bottom: 50px;
-  }
   /* VIP programme */
   .prog-three {
     grid-column: 2;
@@ -796,6 +787,10 @@ export default {
   }
   .prog-six {
     grid-column: 1;
+    grid-row: 4;
+  }
+  .prog-seven {
+    grid-column: 2;
     grid-row: 4;
   }
 

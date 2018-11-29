@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="menu-bar" :class="{'purple-bg': menuColor === 'purple', 'yellow-bg': menuColor === 'yellow', 'white-bg': menuColor === 'white'}">
+    <div class="menu-bar l-spacing-sm" :class="{'purple-bg': menuColor === 'purple', 'yellow-bg': menuColor === 'yellow', 'white-bg': menuColor === 'white'}">
       <div class="menu-fixed" :class="{'full-height menu-top': burgerActive === true, 'purple-bg': menuColor === 'purple', 'yellow-bg': menuColor === 'yellow', 'white-bg': menuColor === 'white'}">
         <div class="menu-home">
           <router-link to="/" data-color="purple"></router-link>
@@ -217,7 +217,7 @@ export default {
     justify-self: flex-end;
   }
   .menu-burger > img {
-    width: 40px;
+    width: 30px;
     height: auto;
     cursor: pointer;
   }
@@ -275,7 +275,7 @@ export default {
         .menu-routes > a:hover h4,
         .menu-routes > a:hover h4 span,
         .menu-routes > .contact-link:hover h4,
-        .menu-routes > .contact-link:hover h4 span, {
+        .menu-routes > .contact-link:hover h4 span {
           color: #fff;
         }
           .menu-routes > a h4,
@@ -311,6 +311,7 @@ export default {
           }
             .icon-img {
               margin: 0 10px 20px 0;
+              background-size: 100%;
             }
               .qr-ctx > h4 {
                 font-size: 0.75rem;
@@ -334,6 +335,7 @@ export default {
   .menu-fixed {
     height: 75px;
     align-items: flex-start;
+    justify-content: center;
     z-index: 10;
   }
   .full-height {
@@ -343,27 +345,43 @@ export default {
   .menu-home {
     background: url('./assets/contactform/young_talent_black_logo_navigation_horizontal.png') no-repeat center;
     background-size: 100%;
-    width: 70px;
-    padding-bottom: 55px;
-    margin-top: 10px;
+    width: 60px;
+    padding-bottom: 40px;
+    margin-top: 15px;
+    margin-right: 455px;
+    margin-left: 0;
   }
   .menu-burger {
-    margin-top: 15px;
+    margin-right: 0;
+    margin-top: 22.5px;
+    margin-left: 455px;
   }
 }
 
 @media (max-width: 1050px) {
+  .menu-fixed {
+    justify-content: space-between;
+  }
   .menu-home {
+    margin-right: 0;
     margin-left: 25px;
   }
   .menu-burger {
     margin-right: 25px;
+    margin-left: 0;
   }
 }
 
 @media (max-width: 750px) {
   .menu-contact {
     margin-right: 90px;
+  }
+}
+
+@media (max-height: 500px) {
+  .menu-routes,
+  .menu-contact {
+    margin-top: 150px
   }
 }
 
