@@ -232,7 +232,7 @@
                 </p>
               </div>
             </div>
-            <div class="plus-simb">&#43;</div>
+            <div class="plus-simb"></div>
             <div class="student-project">
               <div class="img-wrap">
                 <img
@@ -278,7 +278,7 @@
                 </p>
               </div>
             </div>
-            <div class="plus-simb">&#43;</div>
+            <div class="plus-simb"></div>
             <div class="student-project">
               <div class="img-wrap">
                 <img
@@ -323,7 +323,7 @@
                 </p>
               </div>
             </div>
-            <div class="plus-simb">&#43;</div>
+            <div class="plus-simb"></div>
             <div class="student-project">
               <div class="img-wrap">
                 <img
@@ -374,7 +374,7 @@
                 </p>
               </div>
             </div>
-            <div class="plus-simb">&#43;</div>
+            <div class="plus-simb"></div>
             <div class="student-project">
               <div class="img-wrap">
                 <img
@@ -417,7 +417,7 @@
                 </p>
               </div>
             </div>
-            <div class="plus-simb">&#43;</div>
+            <div class="plus-simb"></div>
             <div class="student-project">
               <div class="img-wrap">
                 <img
@@ -461,7 +461,7 @@
                 </p>
               </div>
             </div>
-            <div class="plus-simb">&#43;</div>
+            <div class="plus-simb"></div>
             <div class="student-project">
               <div class="img-wrap">
                 <img
@@ -502,20 +502,22 @@
       <span class="close" @click="modalBoxActive = !modalBoxActive">&times;</span>
       <div class="modal-img-box margin-sides">
         <div class="div">
-          <img class="modal-img" :src="enlargeImg" alt="">
+          <div>
+            <img class="modal-img" :src="enlargeImg" alt="">
+            <div
+              @click="sliderModalImg"
+              data-direction="prev"
+              class="arrow-modal">
+            </div>
+            <div
+              @click="sliderModalImg"
+              data-direction="next"
+              class="arrow-modal">
+            </div>
+          </div>
           <p class="p-text">
             {{ selectedText }}
           </p>
-          <div
-            @click="sliderModalImg"
-            data-direction="prev"
-            class="arrow-modal">
-          </div>
-          <div
-            @click="sliderModalImg"
-            data-direction="next"
-            class="arrow-modal">
-          </div>
         </div>
       </div>
     </div>
@@ -533,7 +535,9 @@ const options = {
 }
 
 window.addEventListener('load', () => {
-  animateScrollTo(document.querySelector('.disciplines-wrap'), options)
+  setTimeout(() => {
+    animateScrollTo(document.querySelector('.disciplines-wrap'), options)
+  }, 3000)
 })
 
 export default {
@@ -603,11 +607,12 @@ export default {
       this.navMenuAppear()
     })
     this.changeIntroText()
+    this.navMenuAppear()
   },
   methods: {
     navMenuAppear () {
       const screenHeight = document.documentElement.clientHeight
-      const scrollTop = document.documentElement.scrollTop
+      const scrollTop = window.pageYOffset
       if (screenHeight <= scrollTop) {
         this.menuAppear = true
       } else {
@@ -675,6 +680,7 @@ export default {
         }
         this.selectedImg = 'portfolio'
       }
+      this.selectedText = this.enlargeImgObj[this.selectedStudent].txt
     },
     slidePrev () {
       if (this.selectedImg === 'offer') {
@@ -687,6 +693,7 @@ export default {
         }
         this.selectedImg = 'offer'
       }
+      this.selectedText = this.enlargeImgObj[this.selectedStudent].txt
     }
   },
   beforeDestroy () {
@@ -825,13 +832,15 @@ export default {
       .sub-ctx > h3 {
         margin-top: 25px;
         font-size: 18px;
+        line-height: 1.4rem;
       }
       .sub-ctx > h5 {
         font-size: 14px;
+        line-height: 1rem;
       }
 
   .disciplines-grid > div .sub-ctx:hover {
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.3);
     cursor: pointer;
   }
   .disciplines-grid > div:hover:after {
@@ -1090,10 +1099,12 @@ export default {
 }
 .plus-simb {
   position: absolute;
-  top: 70px;
-  right: 182px;
-  font-size: 60px;
-  color: #23e8be;
+  top: 85px;
+  right: 185px;
+  width: 30px;
+  height: 30px;
+  background: url(./assets/contactform/plus-symb-blue.png) no-repeat center;
+  background-size: cover;
 }
 
 /* Modal BOX */
@@ -1111,32 +1122,36 @@ export default {
   overflow-y: auto;
 }
   .modal-img-box {
-    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
   }
     .modal-img-box .p-text {
+      margin-top: 15px;
       color: #fff;
       font-weight: 500;
     }
-    .modal-img-box .arrow-modal {
+    .modal-img-box .div > div {
+      position: relative;
+    }
+    .modal-img-box .div > div .arrow-modal {
       content: '';
       position: absolute;
-      top: 45%;
+      top: 50%;
       width: 19px;
       height: 30px;
       background: url(./assets/contactform/arrow-right.png) no-repeat center;
       opacity: .5;
       cursor: pointer;
     }
-    .modal-img-box .arrow-modal:nth-child(3) {
+    .modal-img-box .arrow-modal:nth-child(2) {
       left: 10px;
-      transform: rotate(180deg);
-      transform-origin: center center;
+      transform: rotate(180deg) translateY(15px);
+      transform-origin: center;
     }
     .modal-img-box .arrow-modal:last-child {
       right: 10px;
+      transform: translateY(-15px);
     }
     .modal-img-box .arrow-modal:hover {
       opacity: 1;
@@ -1198,22 +1213,20 @@ export default {
 
   }
   .plus-simb {
-    top: 167px;
+    top: 185px;
     right: 50%;
-    transform: translateX(18px)
+    transform: translateX(15px);
+    -webkit-transform: translateX(15px);
   }
 }
 
 @media (max-height: 700px) {
   .modal-img-box {
     position: absolute;
-    top: 30%;
+    top: 20%;
     left: 10px;
     right: 10px;
     margin-bottom: 50px;
-  }
-  .modal-img-box .arrow-modal {
-    top: 40%;
   }
 }
 
@@ -1244,6 +1257,7 @@ export default {
 @media (max-width: 550px){
   .intro-content h1 {
     font-size: 3.5rem;
+    line-height: 3.25rem;
   }
   .intro-img-box {
     margin-top: 25px;
@@ -1273,11 +1287,16 @@ export default {
       bottom: 10px;
     }
     .sub-ctx > h3 {
-      margin-top: 10px;
+      margin-top: 12px;
+      line-height: 1.7rem;
     }
     .sub-ctx > h3,
     .sub-ctx > h5 {
       margin-left: 10px;
+    }
+    .sub-ctx > h5 {
+      margin-top: 0;
+      line-height: 1.2rem;
     }
 
   .arts {
@@ -1309,6 +1328,9 @@ export default {
     .portfolio-box-one {
       margin: 25px;
     }
+      .portfolio-box-one h1 {
+        line-height: 2.25rem;
+      }
 
   .about-pages-two-wrap {
     background: linear-gradient(to top, #b046aa 150px, #fafafa 150px, #fafafa 100%);
@@ -1343,6 +1365,17 @@ export default {
   .stu-case-box {
     margin: 25px 0;
   }
+    .student-ctx {
+      height: auto;
+      justify-content: space-between;
+    }
+      .student-img {
+        padding: 0 12.5px 0 25px;
+      }
+      .student-img img {
+        display: block;
+        width: 100%;
+      }
 
   .stud-case-p {
     margin-top: 12.5px;
@@ -1354,12 +1387,16 @@ export default {
   }
 
   .student-p {
-    margin: 0 12.5px 0 25px;
+    margin: 0 25px 0 12.5px;
     max-width: 95px;
   }
 
   .student-project .img-wrap:last-child {
     width: 100%;
+  }
+  .plus-simb {
+    top: 73%;
+    transform: translateX(15px);
   }
 }
 

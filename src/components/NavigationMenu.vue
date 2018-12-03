@@ -79,8 +79,8 @@
                   <div class="icon-img zhihu">
                     <a href="https://www.zhihu.com/people/liu-chang-48-12/activities" target="_blank"></a>
                   </div>
-                  <div class="icon-img qq"></div>
-                  <div class="icon-img wechat"></div>
+                  <div onclick="void(0)" class="icon-img qq"></div>
+                  <div onclick="void(0)" class="icon-img wechat"></div>
                 </div>
                 <div class="qr-box">
                   <div class="qr-code">
@@ -129,6 +129,9 @@ export default {
     this.$nextTick(function () {
       window.addEventListener('resize', this.checkScreen)
       this.checkScreen()
+      window.addEventListener('resize', this.navColor)
+      window.addEventListener('scroll', this.navColor)
+      this.navColor()
       this.routerActive()
     })
   },
@@ -147,15 +150,19 @@ export default {
       (this.burgerActive === null) ? this.burgerActive = true : this.burgerActive = !this.burgerActive
     },
     routerActive () {
-      this.menuColor = document.querySelector('.is-active').dataset.color
-      if (document.querySelector('.is-active').href !== 'http://localhost:8080/') {
+      if (document.querySelector('.menu-home a:not(.is-active)')) {
         document.querySelector('.is-active h4').classList.add('active-m')
         document.querySelector('.is-active h4 span').classList.add('active-m')
       }
+    },
+    navColor () {
+      this.menuColor = document.querySelector('.is-active').dataset.color
     }
   },
   beforeDestroy () {
     window.removeEventListener('resize', this.checkScreen)
+    window.removeEventListener('resize', this.navColor)
+    window.removeEventListener('scroll', this.navColor)
   }
 }
 </script>
@@ -198,7 +205,7 @@ export default {
   .menu-home {
     position: relative;
     width: 40px;
-    padding-bottom: 80px;
+    padding-bottom: 85px;
     background: url('./assets/contactform/young_talent_logo_cn_vertical_black.png') no-repeat center;
     background-size: 100%;
     margin-left: 70px;
@@ -301,6 +308,9 @@ export default {
           .contact-i > h4 {
             margin: 15px 0;
           }
+            .contact-i > h4 span {
+              display: block;
+            }
 
         .contact-qr {
           display: flex;

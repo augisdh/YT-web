@@ -550,6 +550,9 @@ export default {
         .sub-head-text > h4 {
           font-size: 22px;
         }
+          .sub-head-text > h4 span {
+            line-height: 1.2rem;
+          }
     .sub-ctx:first-child {
       margin-bottom: 25px;
     }

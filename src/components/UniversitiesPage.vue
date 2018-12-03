@@ -587,6 +587,7 @@ export default {
         .rec-institutions-content > h4 {
           margin: 0 0 50px 0;
           font-size: 2.25rem;
+          line-height: 1.7rem;
         }
           .rec-institutions-content > h4 span {
             display: block;

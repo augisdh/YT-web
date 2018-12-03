@@ -165,11 +165,13 @@ export default {
     .about-content-card > h4 {
       margin: 0 0 50px 0;
       font-size: 2.25rem;
+      line-height: 2.2rem;
     }
       .about-us-ctx > h4 span,
       .about-content-card > h4 span {
         display: block;
         font-size: 1rem;
+        line-height: 1.2rem;
       }
     .about-us-ctx .p-text,
     .about-content-card .p-text {

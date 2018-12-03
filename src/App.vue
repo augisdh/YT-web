@@ -49,8 +49,8 @@
             <div class="icon-img zhihu">
               <a href="https://www.zhihu.com/people/liu-chang-48-12/activities" target="_blank"></a>
             </div>
-            <div class="icon-img qq"></div>
-            <div class="icon-img wechat"></div>
+            <div onclick="void(0)" class="icon-img qq"></div>
+            <div onclick="void(0)" class="icon-img wechat"></div>
           </div>
         </div>
       </div>
@@ -104,6 +104,12 @@ body {
   font-family: 'PingFang HK', 'Hiragino Sans GB', '冬青黑体', "Microsoft Yahei", "微软雅黑", 'STXihei', "华文细黑", 'SimHei', '黑体', 'Hei Ti', 'Helvetica neue', Helvetica, sans-serif
 }
 
+*, ::before, ::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -141,7 +147,7 @@ body {
 }
 .p-text {
   font-size: 1rem;
-  line-height: 1.2rem
+  line-height: 1.4rem;
 }
 .mb-0 {
   margin-bottom: 0  !important;
@@ -174,6 +180,7 @@ footer {
     }
     .f-mobile-content-i > h4 {
       font-size: 1.2rem;
+      margin: 20px 0;
     }
       .f-mobile-content-i > h4 span {
         display: block;

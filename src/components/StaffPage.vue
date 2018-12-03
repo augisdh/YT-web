@@ -26,7 +26,7 @@
           </div>
           <div class="p-staff-content-wrap">
             <div class="person-box shadow">
-              <div class="person-img">
+              <div onclick="void(0)" class="person-img">
                 <img src="./assets/staffpage/1_Becca_Yang.jpg" alt="">
                 <div class="hover-ctx blue">
                   <p class="p-text">
@@ -50,6 +50,7 @@
                     </span>
                   </p>
                 </div>
+                <div v-if="mobileScreen === true" class="plus-symb plus-blue"></div>
               </div>
               <div class="person-ctx">
                 <h5>Becca Y</h5>
@@ -59,7 +60,7 @@
               </div>
             </div>
             <div class="person-box shadow">
-              <div class="person-img">
+              <div onclick="void(0)" class="person-img">
                 <img src="./assets/staffpage/2_Fred_Liu.jpg" alt="">
                 <div class="hover-ctx purple">
                   <p class="p-text">
@@ -81,6 +82,7 @@
                     </span>
                   </p>
                 </div>
+                <div v-if="mobileScreen === true" class="plus-symb plus-purple"></div>
               </div>
               <div class="person-ctx">
                 <h5>Fred L</h5>
@@ -90,7 +92,7 @@
               </div>
             </div>
             <div class="person-box shadow">
-              <div class="person-img">
+              <div onclick="void(0)" class="person-img">
                 <img src="./assets/staffpage/3_Cassie_M.jpg" alt="">
                 <div class="hover-ctx yellow">
                   <p class="p-text">
@@ -112,6 +114,7 @@
                     </span>
                   </p>
                 </div>
+                <div v-if="mobileScreen === true" class="plus-symb plus-yellow"></div>
               </div>
               <div class="person-ctx">
                 <h5>Cassie M</h5>
@@ -121,7 +124,7 @@
               </div>
             </div>
             <div class="person-box shadow">
-              <div class="person-img">
+              <div onclick="void(0)" class="person-img">
                 <img src="./assets/staffpage/4_Bell_Z.jpg" alt="">
                 <div class="hover-ctx blue">
                   <p class="p-text">
@@ -141,6 +144,7 @@
                     </span>
                   </p>
                 </div>
+                <div v-if="mobileScreen === true" class="plus-symb plus-blue"></div>
               </div>
               <div class="person-ctx">
                 <h5>Bell Z</h5>
@@ -152,7 +156,7 @@
               </div>
             </div>
             <div class="person-box shadow">
-              <div class="person-img">
+              <div onclick="void(0)" class="person-img">
                 <img src="./assets/staffpage/5_Ying_W.jpg" alt="">
                 <div class="hover-ctx purple">
                   <p class="p-text">
@@ -174,6 +178,7 @@
                     </span>
                   </p>
                 </div>
+                <div v-if="mobileScreen === true" class="plus-symb plus-purple"></div>
               </div>
               <div class="person-ctx">
                 <h5>Ying W （台湾）</h5>
@@ -184,7 +189,7 @@
               </div>
             </div>
             <div class="person-box shadow">
-              <div class="person-img">
+              <div onclick="void(0)" class="person-img">
                 <img src="./assets/staffpage/6_Jane_L.jpg" alt="">
                 <div class="hover-ctx yellow">
                   <p class="p-text">
@@ -201,6 +206,7 @@
                     </span>
                   </p>
                 </div>
+                <div v-if="mobileScreen === true" class="plus-symb plus-yellow"></div>
               </div>
               <div class="person-ctx">
                 <h5>Jane L</h5>
@@ -211,7 +217,7 @@
               </div>
             </div>
             <div class="person-box shadow">
-              <div class="person-img">
+              <div onclick="void(0)" class="person-img">
                 <img src="./assets/staffpage/7_Lisha_A.jpg" alt="">
                 <div class="hover-ctx blue">
                   <p class="p-text">
@@ -229,6 +235,7 @@
                     </span>
                   </p>
                 </div>
+                <div v-if="mobileScreen === true" class="plus-symb plus-blue"></div>
               </div>
               <div class="person-ctx">
                 <h5>Lisha A</h5>
@@ -239,7 +246,7 @@
               </div>
             </div>
             <div class="person-box shadow">
-              <div class="person-img">
+              <div onclick="void(0)" class="person-img">
                 <img src="./assets/staffpage/8_Encore_Z.jpg" alt="">
                 <div class="hover-ctx purple">
                   <p class="p-text">
@@ -256,6 +263,7 @@
                     </span>
                   </p>
                 </div>
+                <div v-if="mobileScreen === true" class="plus-symb plus-purple"></div>
               </div>
               <div class="person-ctx">
                 <h5>Encore Z</h5>
@@ -266,7 +274,7 @@
               </div>
             </div>
             <div class="person-box shadow">
-              <div class="person-img">
+              <div onclick="void(0)" class="person-img">
                 <img src="./assets/staffpage/9_Liang.jpg" alt="">
                 <div class="hover-ctx yellow">
                   <p class="p-text">
@@ -286,6 +294,7 @@
                     </span>
                   </p>
                 </div>
+                <div v-if="mobileScreen === true" class="plus-symb plus-yellow"></div>
               </div>
               <div class="person-ctx">
                 <h5>Liang</h5>
@@ -296,7 +305,7 @@
               </div>
             </div>
             <div class="person-box shadow">
-              <div class="person-img">
+              <div onclick="void(0)" class="person-img">
                 <img src="./assets/staffpage/10_Echo_Y.jpg" alt="">
                 <div class="hover-ctx blue">
                   <p class="p-text">
@@ -316,6 +325,7 @@
                     </span>
                   </p>
                 </div>
+                <div v-if="mobileScreen === true" class="plus-symb plus-blue"></div>
               </div>
               <div class="person-ctx">
                 <h5>Echo Y</h5>
@@ -326,7 +336,7 @@
               </div>
             </div>
             <div class="person-box shadow">
-              <div class="person-img">
+              <div onclick="void(0)" class="person-img">
                 <img src="./assets/staffpage/11_Carrie_T.jpg" alt="">
                 <div class="hover-ctx purple">
                   <p class="p-text">
@@ -343,6 +353,7 @@
                     </span>
                   </p>
                 </div>
+                <div v-if="mobileScreen === true" class="plus-symb plus-purple"></div>
               </div>
               <div class="person-ctx">
                 <h5>Carrie T (美国)</h5>
@@ -352,7 +363,7 @@
               </div>
             </div>
             <div class="person-box shadow">
-              <div class="person-img">
+              <div onclick="void(0)" class="person-img">
                 <img src="./assets/staffpage/12_Missy_C.jpg" alt="">
                 <div class="hover-ctx yellow">
                   <p class="p-text">
@@ -366,6 +377,7 @@
                     </span>
                   </p>
                 </div>
+                <div v-if="mobileScreen === true" class="plus-symb plus-yellow"></div>
               </div>
               <div class="person-ctx">
                 <h5>Missy C</h5>
@@ -377,7 +389,7 @@
               </div>
             </div>
             <div class="person-box shadow">
-              <div class="person-img">
+              <div onclick="void(0)" class="person-img">
                 <img src="./assets/staffpage/13_Jiayin_L.jpg" alt="">
                 <div class="hover-ctx blue">
                   <p class="p-text">
@@ -396,6 +408,7 @@
                     </span>
                   </p>
                 </div>
+                <div v-if="mobileScreen === true" class="plus-symb plus-blue"></div>
               </div>
               <div class="person-ctx">
                 <h5>Jiayin L</h5>
@@ -406,7 +419,7 @@
               </div>
             </div>
             <div class="person-box shadow">
-              <div class="person-img">
+              <div onclick="void(0)" class="person-img">
                 <img src="./assets/staffpage/14_Sunny_C.jpg" alt="">
                 <div class="hover-ctx purple">
                   <p class="p-text">
@@ -426,6 +439,7 @@
                     </span>
                   </p>
                 </div>
+                <div v-if="mobileScreen === true" class="plus-symb plus-purple"></div>
               </div>
               <div class="person-ctx">
                 <h5>Sunny C</h5>
@@ -437,7 +451,7 @@
               </div>
             </div>
             <div class="person-box shadow">
-              <div class="person-img">
+              <div onclick="void(0)" class="person-img">
                 <img src="./assets/staffpage/15_Michael_Z.jpg" alt="">
                 <div class="hover-ctx yellow">
                   <p class="p-text">
@@ -459,6 +473,7 @@
                     </span>
                   </p>
                 </div>
+                <div v-if="mobileScreen === true" class="plus-symb plus-yellow"></div>
               </div>
               <div class="person-ctx">
                 <h5>Michael Z</h5>
@@ -469,7 +484,7 @@
               </div>
             </div>
             <div class="person-box shadow">
-              <div class="person-img">
+              <div onclick="void(0)" class="person-img">
                 <img src="./assets/staffpage/16_Jojo_Z.jpg" alt="">
                 <div class="hover-ctx blue">
                   <p class="p-text">
@@ -483,6 +498,7 @@
                     </span>
                   </p>
                 </div>
+                <div v-if="mobileScreen === true" class="plus-symb plus-blue"></div>
               </div>
               <div class="person-ctx">
                 <h5>Jojo Z (加拿大) </h5>
@@ -596,6 +612,7 @@ export default {
       }
       .person-img:hover .hover-ctx {
         opacity: 0.9;
+        z-index: 5;
       }
         .person-img > img {
           display: block;
@@ -630,6 +647,9 @@ export default {
           margin: 0;
           font-size: 18px;
         }
+        .person-ctx .p-text {
+          margin-top: 1rem;
+        }
 
 /* Lines, etc... */
 .yellow-line {
@@ -638,6 +658,25 @@ export default {
   float: right;
   margin-bottom: 50px;
   background-color: #fccd0f;
+}
+.plus-symb {
+  position: absolute;
+  left: 25px;
+  bottom: 25px;
+  width: 30px;
+  height: 30px;
+}
+.plus-blue {
+  background: url(./assets/contactform/plus-symb-blue.png) no-repeat center;
+  background-size: cover;
+}
+.plus-yellow {
+  background: url(./assets/contactform/plus-symb-yellow.png) no-repeat center;
+  background-size: cover;
+}
+.plus-purple {
+  background: url(./assets/contactform/plus-symb-purple.png) no-repeat center;
+  background-size: cover;
 }
 .blue {
   background-color: #23d5af;

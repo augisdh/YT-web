@@ -97,7 +97,7 @@ export default {
         this.sendSuccess = true
         setTimeout(() => {
           this.closeForm()
-        }, 3000)
+        }, 5000)
       }
     }
   }
@@ -142,6 +142,7 @@ export default {
       .form-header-i-box > h4 {
         margin: 0;
         font-size: 2rem;
+        line-height: 1.7rem;
       }
         .form-header-i-box > h4 span {
           display: block;
@@ -172,6 +173,7 @@ export default {
       }
       .form-inputs > input:nth-child(5) {
         padding-bottom: 25px;
+        height: 50px;
       }
       .form-inputs .p-text {
         text-align: left;
