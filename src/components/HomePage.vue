@@ -225,9 +225,9 @@
                     王同学<br>
                     电影电视 / 视觉传达
                   </span>
-                  香港演艺学院
-                  伦敦艺术大学
-                  爱丁堡大学
+                  香港演艺学院<br>
+                  伦敦艺术大学<br>
+                  爱丁堡大学<br>
                   等6所大学
                 </p>
               </div>
@@ -271,9 +271,9 @@
                     叶同学<br>
                     纯艺术
                   </span>
-                  马里兰艺术学院
-                  普瑞特艺术学院
-                  纽约视觉艺术学院
+                  马里兰艺术学院<br>
+                  普瑞特艺术学院<br>
+                  纽约视觉艺术学院<br>
                   等5所大学
                 </p>
               </div>
@@ -317,8 +317,8 @@
                     林同学<br>
                     摄影
                   </span>
-                  伦敦艺术大学
-                  布莱顿大学
+                  伦敦艺术大学<br>
+                  布莱顿大学<br>
                   圣安德鲁斯剑桥学院
                 </p>
               </div>
@@ -370,7 +370,8 @@
                     朱同学<br>
                     工业设计
                   </span>
-                  中央圣马丁艺术与设计学院
+                  中央圣马丁<br>
+                  艺术与设计学院
                 </p>
               </div>
             </div>
@@ -456,7 +457,7 @@
                     张同学<br>
                     交互设计
                   </span>
-                  伦敦艺术大学
+                  伦敦艺术大学<br>
                   拉夫堡大学
                 </p>
               </div>
@@ -567,32 +568,44 @@ export default {
         {
           portfolio: 'static/enlarge/underg/undergraduate_portfolio_large1.jpg',
           offer: 'static/enlarge/underg/undergraduate_offer_large1.jpg',
-          txt: '王同学, 电影电视 / 视觉传达, 香港演艺学院, 伦敦艺术大学, 爱丁堡大学, 等6所大学'
+          txt: '王同学, 电影电视 / 视觉传达, 香港演艺学院, 伦敦艺术大学, 爱丁堡大学, 等6所大学',
+          portfolioLq: 'static/enlarge/underg/BLUR_undergraduate_portfolio_large1.jpg',
+          offerLq: 'static/enlarge/underg/BLUR_undergraduate_offer_large1.jpg'
         },
         {
           portfolio: 'static/enlarge/underg/undergraduate_portfolio_large2.jpg',
           offer: 'static/enlarge/underg/undergraduate_offer_large2.jpg',
-          txt: '叶同学, 纯艺术, 马里兰艺术学院, 普瑞特艺术学院, 纽约视觉艺术学院, 等5所大学'
+          txt: '叶同学, 纯艺术, 马里兰艺术学院, 普瑞特艺术学院, 纽约视觉艺术学院, 等5所大学',
+          portfolioLq: 'static/enlarge/underg/BLUR_undergraduate_portfolio_large2.jpg',
+          offerLq: 'static/enlarge/underg/BLUR_undergraduate_offer_large2.jpg'
         },
         {
           portfolio: 'static/enlarge/underg/undergraduate_portfolio_large3.jpg',
           offer: 'static/enlarge/underg/undergraduate_offer_large3.jpg',
-          txt: '林同学, 摄影, 伦敦艺术大学, 布莱顿大学, 圣安德鲁斯剑桥学院'
+          txt: '林同学, 摄影, 伦敦艺术大学, 布莱顿大学, 圣安德鲁斯剑桥学院',
+          portfolioLq: 'static/enlarge/underg/BLUR_undergraduate_portfolio_large3.jpg',
+          offerLq: 'static/enlarge/underg/BLUR_undergraduate_offer_large3.jpg'
         },
         {
           portfolio: 'static/enlarge/postg/postgraduate_portfolio_large1.jpg',
           offer: 'static/enlarge/postg/postgraduate_offer_large1.jpg',
-          txt: '朱同学, 工业设计, 中央圣马丁艺术与设计学院'
+          txt: '朱同学, 工业设计, 中央圣马丁艺术与设计学院',
+          portfolioLq: 'static/enlarge/postg/BLUR_postgraduate_portfolio_large1.jpg',
+          offerLq: 'static/enlarge/postg/BLUR_postgraduate_offer_large1.jpg'
         },
         {
           portfolio: 'static/enlarge/postg/postgraduate_portfolio_large2.jpg',
           offer: 'static/enlarge/postg/postgraduate_offer_large2.jpg',
-          txt: '李同学, 视觉传达, 德国魏玛包豪斯大学'
+          txt: '李同学, 视觉传达, 德国魏玛包豪斯大学',
+          portfolioLq: 'static/enlarge/postg/BLUR_postgraduate_portfolio_large2.jpg',
+          offerLq: 'static/enlarge/postg/BLUR_postgraduate_offer_large2.jpg'
         },
         {
           portfolio: 'static/enlarge/postg/postgraduate_portfolio_large3.jpg',
           offer: 'static/enlarge/postg/postgraduate_offer_large3.jpg',
-          txt: '张同学, 交互设计, 伦敦艺术大学, 拉夫堡大学'
+          txt: '张同学, 交互设计, 伦敦艺术大学, 拉夫堡大学',
+          portfolioLq: 'static/enlarge/postg/BLUR_postgraduate_portfolio_large3.jpg',
+          offerLq: 'static/enlarge/postg/BLUR_postgraduate_offer_large3.jpg'
         }
       ],
       menuAppear: false
@@ -608,8 +621,31 @@ export default {
     })
     this.changeIntroText()
     this.navMenuAppear()
+    this.getImagesLq()
   },
   methods: {
+    getImagesLq () {
+      for (let i in this.enlargeImgObj) {
+        fetch(this.enlargeImgObj[i].portfolio)
+          .then(res => {
+            const img = new Image()
+            img.src = res.url
+          })
+
+        fetch(this.enlargeImgObj[i].offer)
+          .then(res => {
+            const img = new Image()
+            img.src = res.url
+          })
+      }
+    },
+    // getImagesOriginal () {
+    //   const img = new Image()
+    //   img.src = this.enlargeImgObj[this.selectedStudent][this.selectedImg]
+    //   img.onload = () => {
+    //     this.enlargeImg = this.enlargeImgObj[this.selectedStudent][this.selectedImg]
+    //   }
+    // },
     navMenuAppear () {
       const screenHeight = document.documentElement.clientHeight
       const scrollTop = window.pageYOffset
@@ -649,12 +685,11 @@ export default {
       this.enlargeImg = this.enlargeImgObj[this.selectedStudent][this.selectedImg]
       this.selectedText = this.enlargeImgObj[this.selectedStudent].txt
       this.modalBoxActive = true
+      // this.getImagesOriginal()
     },
     closeModalBox (event) {
       const modal = document.getElementById('modal-box')
-      if (event.target === modal) {
-        this.modalBoxActive = !this.modalBoxActive
-      }
+      if (event.target === modal) { this.modalBoxActive = !this.modalBoxActive }
     },
     sliderModalImg (event) {
       (event.target.dataset.direction === 'next') ? this.slideNext() : this.slidePrev()
@@ -668,6 +703,7 @@ export default {
         imgAttr.classList.remove('modal-img-second')
         imgAttr.classList.add('modal-img')
       }
+      // this.getImagesOriginal()
     },
     slideNext () {
       if (this.selectedImg === 'portfolio') {
@@ -1127,7 +1163,7 @@ export default {
     align-items: center;
   }
     .modal-img-box .p-text {
-      margin-top: 15px;
+      margin: 15px 0;
       color: #fff;
       font-weight: 500;
     }
@@ -1162,7 +1198,7 @@ export default {
       position: relative;
       outline: none;
       width: 100%;
-      animation: slideOne 500ms;
+      animation: slideOne 750ms;
       transform: translateX(100%);
       animation-fill-mode: forwards;
     }
@@ -1175,7 +1211,7 @@ export default {
     .modal-img-second {
       display: block;
       width: 100%;
-      animation: slideTwo 500ms;
+      animation: slideTwo 750ms;
       transform: translateX(100%);
       animation-fill-mode: forwards;
     }
@@ -1220,7 +1256,7 @@ export default {
   }
 }
 
-@media (max-height: 700px) {
+@media (max-height: 800px) {
   .modal-img-box {
     position: absolute;
     top: 20%;

@@ -1,5 +1,5 @@
 <template>
-  <div class="contact-wrap l-spacing-sm">
+  <div @click="closeFormOut" class="contact-wrap l-spacing-sm">
     <div class="contact-form-box margin-sides">
       <form class="form" novalidate>
         <div class="form-header">
@@ -72,6 +72,10 @@ export default {
     closeForm () {
       this.$emit('close_form')
     },
+    closeFormOut (event) {
+      const form = document.querySelector('.contact-wrap')
+      if (event.target === form) { this.closeForm() }
+    },
     checkRegexValidation () {
       const checkEmail = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/g
       const checkNumber = /^\+?-?\d+$/g
@@ -141,12 +145,13 @@ export default {
     }
       .form-header-i-box > h4 {
         margin: 0;
-        font-size: 2rem;
-        line-height: 1.7rem;
+        font-size: 2.25rem;
+        line-height: 2.2rem;
       }
         .form-header-i-box > h4 span {
           display: block;
           font-size: 1rem;
+          line-height: 1.2rem;
         }
     .form-header-c-box {
       display: flex;
@@ -166,6 +171,7 @@ export default {
       margin-bottom: 50px;
     }
       .form-inputs > input {
+        width: 100%;
         height: 25px;
         margin-bottom: 25px;
         padding-left: 10px;
@@ -209,6 +215,9 @@ export default {
       text-align: left;
       margin-bottom: 100px;
     }
+      .form-msg .p-text:first-child {
+        margin-bottom: 50px;
+      }
 
     .logo-box {
       display: flex;
@@ -252,5 +261,8 @@ export default {
     text-align: left;
     margin-bottom: 50px;
   }
+    .form-msg .p-text:first-child {
+      margin-bottom: 25px;
+    }
 }
 </style>

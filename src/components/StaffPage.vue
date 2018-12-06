@@ -17,7 +17,7 @@
                 </h4>
                 <p class="p-text">
                   洋桃的导师团队均毕业于全球TOP5顶尖艺术院校，他们作为设计行业里的先锋人，
-                  拥有十分优秀辅导实力和口碑。而导师们更加丰富的行业实践经验和社会资源，
+                  拥有十分优秀的辅导实力和口碑。而导师们更加丰富的行业实践经验和社会资源，
                   给学生们带来了更多在艺术设计领域崭露头角的机会，为学生实现梦想提供最前沿的平台。
                 </p>
               </div>
@@ -55,7 +55,13 @@
               <div class="person-ctx">
                 <h5>Becca Y</h5>
                 <p class="p-text">
-                  珠宝科系教研评审导师中央圣马丁艺术与设计学院荣誉硕士伯明翰珠宝学院荣誉学士
+                  时尚/珠宝科系教研评审导师
+                </p>
+                <p class="p-text">
+                  中央圣马丁艺术与设计学院<br>
+                  荣誉硕士<br>
+                  伯明翰珠宝学院<br>
+                  荣誉学士
                 </p>
               </div>
             </div>
@@ -87,7 +93,10 @@
               <div class="person-ctx">
                 <h5>Fred L</h5>
                 <p class="p-text">
-                  工业/交互科系教研评审导师拉夫堡大学荣誉硕士
+                  工业/交互科系教研评审导师
+                </p>
+                <p class="p-text">
+                  拉夫堡大学荣誉硕士
                 </p>
               </div>
             </div>
@@ -119,7 +128,11 @@
               <div class="person-ctx">
                 <h5>Cassie M</h5>
                 <p class="p-text">
-                  视觉传达科系教研评审导师伯明翰艺术与设计学院荣誉硕士
+                  视觉传达科系教研评审导师
+                </p>
+                <p class="p-text">
+                  伯明翰艺术与设计学院<br>
+                  荣誉硕士
                 </p>
               </div>
             </div>
@@ -133,7 +146,7 @@
                       入围里斯本电影节、圣 保罗<br>
                       国际短片电影节、洛杉矶亚太<br>
                       平洋电影节等<br>
-                      《地球最后的夜晚》执行导演<br>
+                      《地球最后的夜晚》<br>执行导演
                       ，入围第71届戛纳国际电影节<br>
                       《少女哪吒》入围2014年釜<br>
                       山国际电影节
@@ -149,9 +162,13 @@
               <div class="person-ctx">
                 <h5>Bell Z</h5>
                 <p class="p-text">
-                  影视科系教研评审导师<br>
-                  纽约大学Tisch学院硕士<br>
-                  清华大学哲学系学士
+                  影视科系教研评审导师
+                </p>
+                <p class="p-text">
+                  纽约大学Tisch学院<br>
+                  硕士<br>
+                  清华大学哲学系<br>
+                  学士
                 </p>
               </div>
             </div>
@@ -183,8 +200,13 @@
               <div class="person-ctx">
                 <h5>Ying W （台湾）</h5>
                 <p class="p-text">
-                  动画科系教研评审导师<br>
-                  德蒙福特大学VR实践教学博士中央圣马丁艺术与设计学院荣誉硕士和学士
+                  动画科系教研评审导师
+                </p>
+                <p class="p-text">
+                  德蒙福特大学VR实践教学<br>
+                  博士<br>
+                  中央圣马丁艺术与设计学院<br>
+                  荣誉硕士和学士
                 </p>
               </div>
             </div>
@@ -211,8 +233,11 @@
               <div class="person-ctx">
                 <h5>Jane L</h5>
                 <p class="p-text">
-                  家具科系教研评审导师<br>
-                  中央圣马丁艺术与设计学院硕士
+                  家具科系教研评审导师
+                </p>
+                <p class="p-text">
+                  中央圣马丁艺术与设计学院<br>
+                  硕士
                 </p>
               </div>
             </div>
@@ -240,8 +265,11 @@
               <div class="person-ctx">
                 <h5>Lisha A</h5>
                 <p class="p-text">
-                  建筑科系教a研评审导师<br>
-                  中央圣马丁艺术与设计学院荣誉学士
+                  建筑/室内科系教研评审导师
+                </p>
+                <p class="p-text">
+                  中央圣马丁艺术与设计学院<br>
+                  荣誉学士
                 </p>
               </div>
             </div>
@@ -268,8 +296,11 @@
               <div class="person-ctx">
                 <h5>Encore Z</h5>
                 <p class="p-text">
-                  纯艺/插画科系教研评审导师美国罗德岛设计学院Fine arts专业 上海美术学院雕塑系优秀毕
-                  业生
+                  纯艺/插画科系教研评审导师
+                </p>
+                <p class="p-text">
+                  罗德岛设计学院Fine arts专业<br>
+                  上海美术学院雕塑系
                 </p>
               </div>
             </div>
@@ -299,8 +330,11 @@
               <div class="person-ctx">
                 <h5>Liang</h5>
                 <p class="p-text">
-                  工业设计师/ 交互设计师<br>
-                  英国伦敦玛丽女王大学博士
+                  工业设计师/交互设计师
+                </p>
+                <p class="p-text">
+                  英国伦敦玛丽女王大学<br>
+                  博士
                 </p>
               </div>
             </div>
@@ -330,8 +364,11 @@
               <div class="person-ctx">
                 <h5>Echo Y</h5>
                 <p class="p-text">
-                  珠宝设计师/ GIC手绘师<br>
-                  伯明翰珠宝学院硕士
+                  珠宝设计师/GIC手绘师
+                </p>
+                <p class="p-text">
+                  伯明翰珠宝学院<br>
+                  硕士
                 </p>
               </div>
             </div>
@@ -358,7 +395,11 @@
               <div class="person-ctx">
                 <h5>Carrie T (美国)</h5>
                 <p class="p-text">
-                  服装设计师/ 针织设计师/ 插画师 中央圣马丁艺术与设计学院荣誉学士
+                  服装设计师/插画师
+                </p>
+                <p class="p-text">
+                  中央圣马丁艺术与设计学院<br>
+                  荣誉学士
                 </p>
               </div>
             </div>
@@ -382,9 +423,13 @@
               <div class="person-ctx">
                 <h5>Missy C</h5>
                 <p class="p-text">
-                  高级用户体验设计师<br>
-                  拉夫堡大学 硕士<br>
-                  中国美术学院学士
+                  高级用户体验设计师
+                </p>
+                <p class="p-text">
+                  拉夫堡大学<br>
+                  硕士<br>
+                  中国美术学院<br>
+                  学士
                 </p>
               </div>
             </div>
@@ -413,8 +458,11 @@
               <div class="person-ctx">
                 <h5>Jiayin L</h5>
                 <p class="p-text">
-                  珠宝设计师/ IGI精钻鉴定师<br>
-                  中央圣马丁艺术与设计学院荣誉硕士
+                  珠宝设计师/IGI精钻鉴定师
+                </p>
+                <p class="p-text">
+                  中央圣马丁艺术与设计学院<br>
+                  荣誉硕士
                 </p>
               </div>
             </div>
@@ -444,9 +492,13 @@
               <div class="person-ctx">
                 <h5>Sunny C</h5>
                 <p class="p-text">
-                  珠宝设计师<br>
-                  中央圣马丁艺术与设计学院硕士<br>
-                  伦敦时装学院荣誉学士
+                  珠宝设计师
+                </p>
+                <p class="p-text">
+                  中央圣马丁艺术与设计学院<br>
+                  硕士<br>
+                  伦敦时装学院<br>
+                  荣誉学士
                 </p>
               </div>
             </div>
@@ -462,10 +514,10 @@
                       曾任职于全球第二大商业图片库Corbis Images
                     </span>
                     <span>
-                      佳能展厅讲师
+                      佳能展厅讲师<br>
+                      Getty Images US
                     </span>
                     <span>
-                      Getty Images US<br>
                       签约摄影师<br>
                       视觉中国签约摄影师<br>
                       东方IC签约摄影师<br>
@@ -478,7 +530,9 @@
               <div class="person-ctx">
                 <h5>Michael Z</h5>
                 <p class="p-text">
-                  资深摄影师<br>
+                  资深摄影师
+                </p>
+                <p class="p-text">
                   中国摄影师协会会员
                 </p>
               </div>
@@ -503,8 +557,11 @@
               <div class="person-ctx">
                 <h5>Jojo Z (加拿大) </h5>
                 <p class="p-text">
-                  动画设计师/ 插画师<br>
-                  加拿大谢尔丹学院动画研究生
+                  动画设计师/插画师
+                </p>
+                <p class="p-text">
+                  加拿大谢尔丹学院<br>
+                  动画研究生
                 </p>
               </div>
             </div>
@@ -648,7 +705,10 @@ export default {
           font-size: 18px;
         }
         .person-ctx .p-text {
-          margin-top: 1rem;
+          font-size: 13px;
+          letter-spacing: 0;
+          margin-top: 13px;
+          line-height: 1rem;
         }
 
 /* Lines, etc... */
@@ -731,7 +791,9 @@ export default {
       .hover-ctx .p-text {
         margin: 25px;
       }
-
+    .person-ctx .p-text {
+      line-height: 1.4rem;
+    }
   /* Lines */
   .yellow-line {
     width: 50px;
