@@ -32,7 +32,7 @@
                   <img src="./assets/disciplinespage/graphic_design.png" alt="">
                   <div class="sub-head-text">
                     <h4>
-                      平麵设计
+                      平面设计
                       <span>GRAPHIC DESIGN</span>
                     </h4>
                   </div>

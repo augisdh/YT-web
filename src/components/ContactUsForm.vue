@@ -1,5 +1,6 @@
 <template>
   <div @click="closeFormOut" class="contact-wrap l-spacing-sm">
+    <div @click="closeForm" class="close-btn-div"></div>
     <div class="contact-form-box margin-sides">
       <form class="form" novalidate>
         <div class="form-header">
@@ -19,7 +20,7 @@
         </div>
         <div v-if="sendSuccess === false" class="form-inputs">
           <input class="inputName" :class="{'in-valid': validName === false}" type="text" name="name" placeholder="姓名" required>
-          <input class="inputNumber" :class="{'in-valid': validNumber === false}" type="number" name="number" placeholder="电话" required>
+          <input class="inputNumber" :class="{'in-valid': validNumber === false}" type="text" name="number" placeholder="电话" required>
           <input class="inputWechat" :class="{'in-valid': validWechat === false}" type="text" name="wechat" placeholder="微信号" required>
           <input class="inputEmail" :class="{'in-valid': validEmail === false}" type="email" name="email" placeholder="邮箱" required>
           <input class="inputMsg" :class="{'in-valid': validMsg === false}" type="text" name="msg" placeholder="信息" required>
@@ -121,6 +122,9 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: auto;
+  padding-top: 100px;
+  padding-bottom: 50px;
 }
 
 .contact-form-box {
@@ -229,6 +233,17 @@ export default {
         display: block;
         width: 100px;
       }
+
+.close-btn-div {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  width: 25px;
+  height: 25px;
+  background: url(./assets/contactform/x-icon-blue.png) no-repeat center;
+  background-size: cover;
+  cursor: pointer;
+}
 
 /* Lines */
 .purple-line {

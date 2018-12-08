@@ -190,7 +190,7 @@
           <div class="content-box">
             <div class="content-heading-box">
               <h4>
-                <span>學生案例</span>
+                <span>学生案例</span>
                 STUDENT CASES
               </h4>
             </div>
@@ -500,21 +500,23 @@
     </div>
     <!-- Modal BOX -->
     <div id="modal-box" class="modal" @click="closeModalBox" :class="{'display-f': modalBoxActive === true, 'display-n': modalBoxActive !== true}">
-      <span class="close" @click="modalBoxActive = !modalBoxActive">&times;</span>
+      <div class="close" @click="modalBoxActive = !modalBoxActive"></div>
       <div class="modal-img-box margin-sides">
+        <div class="arrows-wrapper">
+          <div
+            @click="sliderModalImg"
+            data-direction="prev"
+            class="arrow-modal">
+          </div>
+          <div
+            @click="sliderModalImg"
+            data-direction="next"
+            class="arrow-modal">
+          </div>
+        </div>
         <div class="div">
-          <div>
+          <div class="modal-img-wrapper">
             <img class="modal-img" :src="enlargeImg" alt="">
-            <div
-              @click="sliderModalImg"
-              data-direction="prev"
-              class="arrow-modal">
-            </div>
-            <div
-              @click="sliderModalImg"
-              data-direction="next"
-              class="arrow-modal">
-            </div>
           </div>
           <p class="p-text">
             {{ selectedText }}
@@ -536,6 +538,7 @@ const options = {
 }
 
 window.addEventListener('load', () => {
+  // scroll out of INTRO page
   setTimeout(() => {
     animateScrollTo(document.querySelector('.disciplines-wrap'), options)
   }, 3000)
@@ -568,44 +571,32 @@ export default {
         {
           portfolio: 'static/enlarge/underg/undergraduate_portfolio_large1.jpg',
           offer: 'static/enlarge/underg/undergraduate_offer_large1.jpg',
-          txt: '王同学, 电影电视 / 视觉传达, 香港演艺学院, 伦敦艺术大学, 爱丁堡大学, 等6所大学',
-          portfolioLq: 'static/enlarge/underg/BLUR_undergraduate_portfolio_large1.jpg',
-          offerLq: 'static/enlarge/underg/BLUR_undergraduate_offer_large1.jpg'
+          txt: '王同学, 电影电视 / 视觉传达, 香港演艺学院, 伦敦艺术大学, 爱丁堡大学, 等6所大学'
         },
         {
           portfolio: 'static/enlarge/underg/undergraduate_portfolio_large2.jpg',
           offer: 'static/enlarge/underg/undergraduate_offer_large2.jpg',
-          txt: '叶同学, 纯艺术, 马里兰艺术学院, 普瑞特艺术学院, 纽约视觉艺术学院, 等5所大学',
-          portfolioLq: 'static/enlarge/underg/BLUR_undergraduate_portfolio_large2.jpg',
-          offerLq: 'static/enlarge/underg/BLUR_undergraduate_offer_large2.jpg'
+          txt: '叶同学, 纯艺术, 马里兰艺术学院, 普瑞特艺术学院, 纽约视觉艺术学院, 等5所大学'
         },
         {
           portfolio: 'static/enlarge/underg/undergraduate_portfolio_large3.jpg',
           offer: 'static/enlarge/underg/undergraduate_offer_large3.jpg',
-          txt: '林同学, 摄影, 伦敦艺术大学, 布莱顿大学, 圣安德鲁斯剑桥学院',
-          portfolioLq: 'static/enlarge/underg/BLUR_undergraduate_portfolio_large3.jpg',
-          offerLq: 'static/enlarge/underg/BLUR_undergraduate_offer_large3.jpg'
+          txt: '林同学, 摄影, 伦敦艺术大学, 布莱顿大学, 圣安德鲁斯剑桥学院'
         },
         {
           portfolio: 'static/enlarge/postg/postgraduate_portfolio_large1.jpg',
           offer: 'static/enlarge/postg/postgraduate_offer_large1.jpg',
-          txt: '朱同学, 工业设计, 中央圣马丁艺术与设计学院',
-          portfolioLq: 'static/enlarge/postg/BLUR_postgraduate_portfolio_large1.jpg',
-          offerLq: 'static/enlarge/postg/BLUR_postgraduate_offer_large1.jpg'
+          txt: '朱同学, 工业设计, 中央圣马丁艺术与设计学院'
         },
         {
           portfolio: 'static/enlarge/postg/postgraduate_portfolio_large2.jpg',
           offer: 'static/enlarge/postg/postgraduate_offer_large2.jpg',
-          txt: '李同学, 视觉传达, 德国魏玛包豪斯大学',
-          portfolioLq: 'static/enlarge/postg/BLUR_postgraduate_portfolio_large2.jpg',
-          offerLq: 'static/enlarge/postg/BLUR_postgraduate_offer_large2.jpg'
+          txt: '李同学, 视觉传达, 德国魏玛包豪斯大学'
         },
         {
           portfolio: 'static/enlarge/postg/postgraduate_portfolio_large3.jpg',
           offer: 'static/enlarge/postg/postgraduate_offer_large3.jpg',
-          txt: '张同学, 交互设计, 伦敦艺术大学, 拉夫堡大学',
-          portfolioLq: 'static/enlarge/postg/BLUR_postgraduate_portfolio_large3.jpg',
-          offerLq: 'static/enlarge/postg/BLUR_postgraduate_offer_large3.jpg'
+          txt: '张同学, 交互设计, 伦敦艺术大学, 拉夫堡大学'
         }
       ],
       menuAppear: false
@@ -618,34 +609,13 @@ export default {
       window.addEventListener('scroll', this.navMenuAppear)
       window.addEventListener('resize', this.navMenuAppear)
       this.navMenuAppear()
+      // window.addEventListener('resize', this.enlargeImgFit)
+      // this.enlargeImgFit()
     })
     this.changeIntroText()
     this.navMenuAppear()
-    this.getImagesLq()
   },
   methods: {
-    getImagesLq () {
-      for (let i in this.enlargeImgObj) {
-        fetch(this.enlargeImgObj[i].portfolio)
-          .then(res => {
-            const img = new Image()
-            img.src = res.url
-          })
-
-        fetch(this.enlargeImgObj[i].offer)
-          .then(res => {
-            const img = new Image()
-            img.src = res.url
-          })
-      }
-    },
-    // getImagesOriginal () {
-    //   const img = new Image()
-    //   img.src = this.enlargeImgObj[this.selectedStudent][this.selectedImg]
-    //   img.onload = () => {
-    //     this.enlargeImg = this.enlargeImgObj[this.selectedStudent][this.selectedImg]
-    //   }
-    // },
     navMenuAppear () {
       const screenHeight = document.documentElement.clientHeight
       const scrollTop = window.pageYOffset
@@ -679,13 +649,51 @@ export default {
     checkScreen () {
       (document.querySelector('.main-wrapper').getAttributeNode('mob-screen')) ? this.mobileScreen = true : this.mobileScreen = false
     },
+    getEnlargeImgSize () {
+      const screenHeight = window.innerHeight
+      const screenWidth = window.innerWidth
+      const image = document.querySelector('.modal-img-box img')
+      image.onload = () => {
+        const imageWidth = image.width
+        const imageHeight = image.height
+        this.setEnlargeImgWidth(imageWidth, imageHeight, screenWidth, screenHeight)
+      }
+    },
+    setEnlargeImgWidth (imgWidth, imgHeight, scWidth, scHeight) {
+      // .modal-img-wrapper style = width: %, margin: 0 auto
+      const elModify = document.querySelector('.modal-img-wrapper')
+      if (scHeight < 1000 && scHeight >= 850 && scWidth > 550) {
+        if (imgHeight > imgWidth) {
+          elModify.style.width = '80%'
+          elModify.style.margin = '0 auto'
+        } else {
+          elModify.removeAttribute('style')
+        }
+      } else if (scHeight < 850 && scHeight >= 700 && scWidth > 550) {
+        if (imgHeight > imgWidth) {
+          elModify.style.width = '70%'
+          elModify.style.margin = '0 auto'
+        } else {
+          elModify.removeAttribute('style')
+        }
+      } else if (scHeight < 700 && scWidth > 550) {
+        if (imgHeight > imgWidth) {
+          elModify.style.width = '50%'
+          elModify.style.margin = '0 auto'
+        } else {
+          elModify.removeAttribute('style')
+        }
+      } else {
+        elModify.removeAttribute('style')
+      }
+    },
     getEnlargeImg (event) {
+      this.getEnlargeImgSize()
       this.selectedStudent = Number(event.target.dataset.enlarge)
       this.selectedImg = event.target.dataset.current
       this.enlargeImg = this.enlargeImgObj[this.selectedStudent][this.selectedImg]
       this.selectedText = this.enlargeImgObj[this.selectedStudent].txt
       this.modalBoxActive = true
-      // this.getImagesOriginal()
     },
     closeModalBox (event) {
       const modal = document.getElementById('modal-box')
@@ -703,7 +711,7 @@ export default {
         imgAttr.classList.remove('modal-img-second')
         imgAttr.classList.add('modal-img')
       }
-      // this.getImagesOriginal()
+      this.getEnlargeImgSize()
     },
     slideNext () {
       if (this.selectedImg === 'portfolio') {
@@ -1161,35 +1169,39 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 100px;
   }
     .modal-img-box .p-text {
       margin: 15px 0;
       color: #fff;
       font-weight: 500;
     }
-    .modal-img-box .div > div {
+    .modal-img-box .div {
       position: relative;
     }
-    .modal-img-box .div > div .arrow-modal {
-      content: '';
+    .arrows-wrapper {
+      max-width: 1000px;
+      width: 100%;
       position: absolute;
       top: 50%;
+      transform: translateY(10px);
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      z-index: 15;
+    }
+    .arrows-wrapper .arrow-modal {
       width: 19px;
       height: 30px;
       background: url(./assets/contactform/arrow-right.png) no-repeat center;
       opacity: .5;
       cursor: pointer;
     }
-    .modal-img-box .arrow-modal:nth-child(2) {
-      left: 10px;
-      transform: rotate(180deg) translateY(15px);
+    .arrows-wrapper .arrow-modal:first-child {
+      transform: rotate(180deg);
       transform-origin: center;
     }
-    .modal-img-box .arrow-modal:last-child {
-      right: 10px;
-      transform: translateY(-15px);
-    }
-    .modal-img-box .arrow-modal:hover {
+    .arrows-wrapper .arrow-modal:hover {
       opacity: 1;
     }
 
@@ -1199,12 +1211,12 @@ export default {
       outline: none;
       width: 100%;
       animation: slideOne 750ms;
-      transform: translateX(100%);
+      opacity: 0;
       animation-fill-mode: forwards;
     }
     @keyframes slideOne {
       100% {
-        transform: translateX(0);
+        opacity: 1;
       }
     }
 
@@ -1212,22 +1224,23 @@ export default {
       display: block;
       width: 100%;
       animation: slideTwo 750ms;
-      transform: translateX(100%);
+      opacity: 0;
       animation-fill-mode: forwards;
     }
     @keyframes slideTwo {
       100% {
-        transform: translateX(0);
+        opacity: 1;
       }
     }
 
   .close {
     position: absolute;
-    top: 15px;
-    right: 35px;
-    color: #23e8be;
-    font-size: 40px;
-    font-weight: bold;
+    top: 25px;
+    right: 25px;
+    background: url(./assets/contactform/x-icon-blue.png) no-repeat center;
+    background-size: cover;
+    width: 25px;
+    height: 25px;
     transition: 0.3s;
     cursor: pointer;
   }
@@ -1248,21 +1261,17 @@ export default {
     flex: 1 1 30%;
 
   }
+  .arrows-wrapper .arrow-modal:first-child {
+    margin-left: 25px;
+  }
+  .arrows-wrapper .arrow-modal:last-child {
+    margin-right: 25px;
+  }
   .plus-simb {
     top: 185px;
     right: 50%;
     transform: translateX(15px);
     -webkit-transform: translateX(15px);
-  }
-}
-
-@media (max-height: 800px) {
-  .modal-img-box {
-    position: absolute;
-    top: 20%;
-    left: 10px;
-    right: 10px;
-    margin-bottom: 50px;
   }
 }
 
